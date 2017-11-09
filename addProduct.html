@@ -1,0 +1,78 @@
+<html>
+<link rel="stylesheet" href="main.css"/>
+<link rel="stylesheet" href="model.css"/>
+  <head>
+    <title> ADD PRODUCT </title>
+  </head>
+
+  <body>
+
+  <header>
+<!--MENU Bar-->
+      <div class= "container">
+        <nav class= "nav">
+          <ul><li><a href="index.php#home">HOME</a></li>
+          <li><a href="index.php#news">NEWS</a></li>
+          <li><a href="index.php#models">MODELS</a></li>
+          <li><a href="index.php#contact">CONTACT US</a></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li><a href="login.php">
+              LOG OUT
+              </a></li>
+
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <center>
+      <label style = "font-size: 30;">ADD PRODUCT<label>
+    <table style = "border-style: groove">
+      <tr>
+        <form action="product-table.php" method = "post">
+        <td style="width: 30%;">
+          <b><label>Product Name:</label></b>
+        </td>
+        <td>
+          <input type="text" placeholder="Enter Product Name" name="prodName" required>
+        </td>
+      </tr>
+      <tr>
+        <td style="width: 30%;">
+          <b><label>Manufacturer:</label></b>
+        </td>
+        <td>
+          <input type="text" placeholder="Enter Manufacturer" name="manu" required>
+        </td>
+
+      </tr>
+      <tr>
+        <td style="width: 30%;">
+          <b><label>Description:</label></b>
+        </td>
+        <td>
+          <input type="text" placeholder="Enter Description" name="desc" required>
+        </td>
+
+      </tr>
+      <tr>
+        <td style="width: 30%;">
+          <b><label>Price:</label></b>
+        </td>
+        <td>
+          <input type="text" placeholder="Enter Price" name="price" required>
+        </td>
+
+      </tr>
+      </tr>
+
+    </table>
+      <input type = "submit">
+    </form>
+  </center>
+</body>
+</html>
