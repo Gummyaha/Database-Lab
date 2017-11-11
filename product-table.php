@@ -1,5 +1,7 @@
 <html>
-
+<?php
+require_once("connect.php");
+ ?>
 <head>
   <title> User Table</title>
 </head>
@@ -10,21 +12,32 @@
 <center>
   <table class="usertable" style="border-collapse: collapse; width: 60%;">
     <tr style = "background-color:#f2f2f2;" >
+      <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Product ID</th>
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Product Name</th>
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Manufacturer</th>
+      <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Price</th>
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Description</th>
 
-      <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Price</th>
     </tr>
 
     <tr>
       <?php
-      if(isset($_POST["prodName"])){
-      echo '<td style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">'. $_POST["prodName"].'</td>';
-      echo '<td style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">'. $_POST["manu"].'</td>';
-      echo '<td style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">'. $_POST["desc"].'</td>';
-      echo '<td style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">'. $_POST["price"].'</td>';
-}
+      $q = "select * from product";
+      $result = $mysqli->query($q);
+      if ($result) {
+          while($row = $result->fetch_array()){
+            echo "<td>".$row['productID'] ."</td>";
+            echo "<td>".$row['name'] ."</td>";
+            echo "<td>".$row['manufacturer'] ."</td>";
+            echo "<td>".$row['price'] ."</td>";
+            echo "<td>".$row['description'] ."</td>";
+
+
+          }
+      }else{
+        echo "FUCK";
+      }
+
 
       ?>
 
