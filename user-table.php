@@ -1,5 +1,9 @@
 <html>
+<?php
+require_once("connect.php");
 
+
+ ?>
 <head>
   <title> User Table</title>
 </head>
@@ -10,23 +14,30 @@
 <center>
   <table class="usertable" style="border-collapse: collapse; width: 60%;">
     <tr style = "background-color:#f2f2f2;" >
+      <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">User ID</th>
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">First Name</th>
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Last Name</th>
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Username</th>
-
-      <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Address</th>
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Email</th>
     </tr>
 
     <tr>
       <?php
-      if(isset($_POST["fname"])){
-      echo '<td style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">'. $_POST["fname"].'</td>';
-      echo '<td style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">'. $_POST["lname"].'</td>';
-      echo '<td style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">'. $_POST["user"].'</td>';
-      echo '<td style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">'. $_POST["address"].'</td>';
-      echo '<td style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">'. $_POST["email"].'</td>';
-}
+      $q = "select * from customer";
+      $result = $mysqli->query($q);
+      if ($result) {
+          while($row = $result->fetch_array()){
+            echo "<td>".$row['customerID'] ."</td>";
+            echo "<td>".$row['fName'] ."</td>";
+            echo "<td>".$row['lName'] ."</td>";
+            echo "<td>".$row['username'] ."</td>";
+            echo "<td>".$row['email'] ."</td>";
+
+          }
+      }else{
+        echo "FUCK";
+      }
+
 
       ?>
 
