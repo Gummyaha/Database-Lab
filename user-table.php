@@ -1,9 +1,11 @@
 <html>
+
 <?php
 require_once("connect.php");
 
 
  ?>
+
 <head>
   <title> User Table</title>
 </head>
@@ -14,15 +16,18 @@ require_once("connect.php");
 <center>
   <table class="usertable" style="border-collapse: collapse; width: 60%;">
     <tr style = "background-color:#f2f2f2;" >
+
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">User ID</th>
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">First Name</th>
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Last Name</th>
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Username</th>
+
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Email</th>
     </tr>
 
     <tr>
       <?php
+
       $q = "select * from customer";
       $result = $mysqli->query($q);
       if ($result) {
@@ -37,6 +42,7 @@ require_once("connect.php");
       }else{
         echo "FUCK";
       }
+
 
 
       ?>

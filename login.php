@@ -55,12 +55,18 @@ if(isset($_POST["user"]) && isset($_SESSION["prevPage"])){
       </nav>
     </div>
     </header>
+
+
+    <br>
+    <br>
+    <br>
     <center style="margin: 50px;">
 
       <form action="login.php" method = "post">
-        <div style="width: 40%">
+        <div style="width: 40%; padding: 5%;">
           <td>
-            <tr class = "loginBox">
+            <tr class = "loginBox";>
+
               <?php
               if(isset($_SESSION["user"])){
                 echo '<button type="submit" name="logOut" value = "logOut">Log Out</button></td></tr>';
