@@ -34,7 +34,8 @@
       <label style = "font-size: 30;">ADD USER<label>
     <table style = "border-style: groove">
       <tr>
-        <form action="user-table.php" method = "post">
+        <form action="add.php" method = "post">
+          <input type = "hidden" value = "customer">
         <td style="width: 30%;">
           <b><label>First Name:</label></b>
         </td>
@@ -57,15 +58,6 @@
         </td>
         <td>
           <input type="text" placeholder="Enter Username" name="user" required>
-        </td>
-
-      </tr>
-      <tr>
-        <td style="width: 30%;">
-          <b><label>Address:</label></b>
-        </td>
-        <td>
-          <input type="text" placeholder="Enter Address" name="address" required>
         </td>
 
       </tr>
