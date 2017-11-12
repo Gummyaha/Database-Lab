@@ -24,19 +24,19 @@ require_once("connect.php");
 
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Email</th>
     </tr>
-
-    <tr>
       <?php
 
       $q = "select * from customer";
       $result = $mysqli->query($q);
       if ($result) {
           while($row = $result->fetch_array()){
+            echo "<tr>";
             echo "<td>".$row['customerID'] ."</td>";
             echo "<td>".$row['fName'] ."</td>";
             echo "<td>".$row['lName'] ."</td>";
             echo "<td>".$row['username'] ."</td>";
             echo "<td>".$row['email'] ."</td>";
+            echo "</tr>";
 
           }
       }else{
@@ -47,7 +47,6 @@ require_once("connect.php");
 
       ?>
 
-    </tr>
   <table>
 
 <br>

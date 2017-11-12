@@ -33,7 +33,8 @@
       <label style = "font-size: 30;">ADD PRODUCT<label>
     <table style = "border-style: groove">
       <tr>
-        <form action="product-table.php" method = "post">
+        <form action="add.php" method = "post">
+          <input type = "hidden" name = "page" value = "product">
         <td style="width: 30%;">
           <b><label>Product Name:</label></b>
         </td>
@@ -52,19 +53,20 @@
       </tr>
       <tr>
         <td style="width: 30%;">
-          <b><label>Description:</label></b>
+          <b><label>Price:</label></b>
         </td>
         <td>
-          <input type="text" placeholder="Enter Description" name="desc" required>
+          <input type="text" placeholder="Enter Price" name="price" required>
+
         </td>
 
       </tr>
       <tr>
         <td style="width: 30%;">
-          <b><label>Price:</label></b>
+          <b><label>Description:</label></b>
         </td>
         <td>
-          <input type="text" placeholder="Enter Price" name="price" required>
+          <textarea rows="3" cols="70" name = 'desc' placeholer = "Enter Description"></textarea>
         </td>
 
       </tr>
