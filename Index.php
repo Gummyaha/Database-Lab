@@ -17,7 +17,7 @@
               <li><a href="#news">NEWS</a></li>
               <li><a href="#models">MODELS</a></li>
               <li><a href="#services">SERVICES</a></li>
-              <li><a href="#booking">BOOKING</a></li>
+              <li><a href="Booking.html">BOOKING</a></li>
               <li><a href="#contact">CONTACT US</a></li>
               <li></li>
               <li></li>
