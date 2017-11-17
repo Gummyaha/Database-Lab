@@ -20,12 +20,10 @@ require_once("connect.php");
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Manufacturer</th>
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Price</th>
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Description</th>
-
+      <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Edit</th>
 
     </tr>
-
       <?php
-
       $q = "select * from product";
       $result = $mysqli->query($q);
       if ($result) {
@@ -36,6 +34,7 @@ require_once("connect.php");
             echo "<td>".$row['manufacturer'] ."</td>";
             echo "<td>".$row['price'] ."</td>";
             echo "<td>".$row['description'] ."</td>";
+            echo "<td><a href = 'editProduct.php?prod=".$row['productID']."'> Edit </a></td>";
             echo "</tr>";
 
 
@@ -45,9 +44,8 @@ require_once("connect.php");
       }
 
 
-
       ?>
-  <table>
+  </table>
 
 <br>
 <br>
