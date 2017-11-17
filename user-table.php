@@ -36,7 +36,7 @@ require_once("connect.php");
             echo "<td>".$row['lName'] ."</td>";
             echo "<td>".$row['username'] ."</td>";
             echo "<td>".$row['email'] ."</td>";
-            echo "<td><a href = 'editUser.php?prod=".$row['customerID']."'> Edit </a></td>";
+            echo "<td><a href = 'editUser.php?user=".$row['customerID']."'> Edit </a></td>";
             echo "</tr>";
 
           }
