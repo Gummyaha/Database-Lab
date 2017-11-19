@@ -58,7 +58,7 @@
       </table>
     </center>
 
-    <button class="button">NEXT STEP</button>
+    <a href="Booking2.php"><button class="button">NEXT STEP</button></a>
 
   </body>
 </html>
