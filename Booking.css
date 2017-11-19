@@ -1,0 +1,220 @@
+body{
+  font-weight: 300;
+}
+
+.container{
+  width: 100%
+  margin: 0 auto;
+  padding-bottom: 20px;
+  position : fixed;
+  z-index: 1000;
+}
+
+header{
+  background: White;
+}
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.nav-left{
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+nav ul{
+  list-style-type: none;
+  margin: -1%;
+  padding-right: 100%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 100%;
+  position: fixed;
+}
+
+nav li{
+  display: inline-block;
+  margin-left: 70px;
+  margin-bottom: 15px;
+  padding-top: 15px;
+  position: relative;
+}
+
+nav a {
+  color: #3a3a3b;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+nav a:hover{
+  color: grey;
+}
+
+nav a:before {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: black;
+  position: relative;
+  top: 0%;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover:before{
+  width: 100%
+}
+
+.ChooseBrand{
+  margin: 30px 0px 30px 0px;
+}
+
+.banner{
+  width: 100%;
+  height: auto;
+}
+
+
+.car-logo:hover{
+  opacity: 0.3;
+}
+
+.button {
+    float: right;
+    margin: 0px 0px 30px 0px;
+    background-color: white;
+    color: #57565d;
+    border: 1px solid #555555;
+    padding: 1% 2%;
+    font-size: 16px;
+}
+
+.button:hover {
+  background-color: #57565d;
+  color: white;
+  border: 1px solid white;
+  padding: 1% 2%;
+  font-size: 16px;
+}
+
+.confirm-button {
+    margin: 0px 0px 30px 0px;
+    background-color: #29e829;
+    color: white;
+    border: 1px solid white;
+    padding: 1% 2%;
+    font-size: 1rem;
+}
+
+.confirm-button:hover {
+  color: #29e829;
+  background-color: white;
+  border: 1px solid #29e829;
+  padding: 1% 2%;
+  font-size: 1rem;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* The radio-container */
+.radio-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-container input {
+    position: absolute;
+    opacity: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a green background */
+.radio-container input:checked ~ .checkmark {
+    background-color: #29e829;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
