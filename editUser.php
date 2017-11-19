@@ -21,26 +21,9 @@ if(isset($_GET['user'])){
 
   <header>
 <!--MENU Bar-->
-      <div class= "container">
-        <nav class= "nav">
-          <ul>
-            <li><a href="index.php#home">HOME</a></li>
-            <li><a href="index.php#news">NEWS</a></li>
-            <li><a href="index.php#models">MODELS</a></li>
-            <li><a href="index.php#contact">CONTACT US</a></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li><a href="login.php">
-              LOG OUT
-              </a></li>
-
-          </ul>
-        </nav>
-      </div>
+      <?php
+      require_once(menu.html);
+      ?>
     </header>
     <center>
       <label style = "font-size: 30;">ADD USER<label>
