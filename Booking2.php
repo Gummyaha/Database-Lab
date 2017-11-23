@@ -1,80 +1,68 @@
 <?php
-  session_start();
- ?>
+session_start();
+require_once('connect.php');
+if(isset($_POST['select'])){
+  $q = 'SELECT productID, name FROM product where manufacturer = (SELECT brandID from brands where brandID = '.$_POST['select'].')';
+  //echo $q;
+}else{
+  header('Location:Booking.php');
+}
+?>
 <html>
 <link rel="stylesheet" href="Booking.css"/>
-  <head>
-    <title> THE CAR : Booking</title>
-  </head>
+<head>
+  <title> THE CAR : Booking</title>
+</head>
 
-  <header>
-<!--MENU Bar-->
-      <div class= "container">
-        <nav class= "nav">
-          <ul>
-              <li><a href="index.php">HOME</a></li>
-              <li><a href="index.php">NEWS</a></li>
-              <li><a href="index.php">MODELS</a></li>
-              <li><a href="Booking.php">BOOKING</a></li>
-              <li><a href="index.php">CONTACT US</a></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li><a href="login.php">
-                <?php if(isset($_SESSION["user"])){
-                  echo "LOG OUT";
-                }else{
-                  echo "LOG IN";
-                }
-                ?>
-              </a></li>
-              </ul>
-        </nav>
-      </div>
-  </header>
+<header>
+  <!--MENU Bar-->
+  <?php
+  require_once('menu.php');
+  ?>
+</header>
 
 
-  <body>
-    <img class="banner" src="Banner-Car3.png"><br>
-    <img class="ChooseBrand" style="float: right; width:90%"; src="Head-Choose-Model.png">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+<body>
+  <img class="banner" src="Banner-Car3.png"><br>
+  <img class="ChooseBrand" style="float: right; width:90%"; src="Head-Choose-Model.png">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <form action="Booking3.php" method="post">
+    <?php
+    $results = $mysqli -> query($q);
+    while($row = $results->fetch_array()){
+      echo '<br>';
+      echo '<label class="radio-container" style="margin-left: 45%;">';
+      echo '<input type="radio" checked="radio" name="model" value = '.$row["productID"].'>';
+      echo $row['name'];
+      echo '<span class="checkmark"></span>';
+      echo '</label>';
 
-      <br>
-      <label class="radio-container" style="margin-left: 45%;">
-        <input type="radio" checked="radio" name="radio">One
-        <span class="checkmark"></span>
-      </label>
-      <br>
-      <label class="radio-container" style="margin-left: 45%;">
-        <input type="radio" name="radio">Two
-        <span class="checkmark"></span>
-      </label>
-      <br>
-      <label class="radio-container" style="margin-left: 45%;">
-        <input type="radio" name="radio">Three
-        <span class="checkmark"></span>
-      </label>
-      <br>
+    }
+      echo 'SHOW IMAGE ON THE RIGHT ALSO';
+    ?>
+
+    <br>
 
     <br>
     <br>
     <br>
     <br>
 
-    <a href="Booking3.php"><button class="button">Next > </button></a>
+    <!-- <a href="Booking3.php"><button class="button"> </button></a> -->
+    <input type="submit" class = "button" value  = "Next >">
     <a href="Booking.php"><button class="button"> < Back</button></a>
 
+  </form>
 
-  </body>
+</body>
 </html>

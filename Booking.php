@@ -1,64 +1,78 @@
 <?php
-  session_start();
- ?>
+session_start();
+require_once('connect.php');
+?>
 <html>
 <link rel="stylesheet" href="Booking.css"/>
-  <head>
-    <title> THE CAR : Booking</title>
-  </head>
+<head>
+  <title> THE CAR : Booking</title>
+</head>
 
-  <header>
-<!--MENU Bar-->
-      <div class= "container">
-        <nav class= "nav">
-          <ul>
-              <li><a href="index.php">HOME</a></li>
-              <li><a href="index.php">NEWS</a></li>
-              <li><a href="index.php">MODELS</a></li>
-              <li><a href="Booking.php">BOOKING</a></li>
-              <li><a href="index.php">CONTACT US</a></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li><a href="login.php">
-                <?php if(isset($_SESSION["user"])){
-                  echo "LOG OUT";
-                }else{
-                  echo "LOG IN";
-                }
-                ?>
-              </a></li>
-              </ul>
-        </nav>
-      </div>
-  </header>
+<header>
+  <!--MENU Bar-->
+  <?php
+  require_once('menu.php');
+
+  ?>
+</header>
 
 
-  <body>
-    <img class="banner" src="Banner-Car3.png">
-    <img class="ChooseBrand" style="float: right; width:90%"; src="Head-Choose-Brand.png">
+<body>
+  <img class="banner" src="Banner-Car3.png">
+  <img class="ChooseBrand" style="float: right; width:100%"; src="Head-Choose-Brand.png">
+  <form action = "Booking2.php" method="post">
 
     <center>
       <table>
-        <tr>
-          <td class="car-logo">
-            <img class="LogoBrand" src="maseratil.png">
+          <td class = "letter-header" colspan = 7>
+            <center>
+            <?php
+            $letters = range('A', 'Z');
+            foreach($letters as $let){
+              echo '<a class="letters" href = "?filter='.$let.'">'.$let.'</a>';
+              echo ' ';
+            }
+            echo '<a class="letters" href = ""> | ALL</a>';
+            ?>
+
+          </center>
           </td>
-          <td class="car-logo">
-            <img class="LogoBrand" src="benz.png">
-          </td>
-          <td class="car-logo">
-            <img class="LogoBrand" src="bugati.png">
-          </td>
-          <td class="car-logo">
-            <img class="LogoBrand" src="ferrari.png">
-          </td>
+        <?php
+        if(isset($_GET['filter'])){
+          $q = 'SELECT * FROM brands where brandName LIKE "'.$_GET['filter'].'%"';
+          //echo $q;
+        }else{
+          $q = 'SELECT * FROM brands';
+      }
+        $result = $mysqli->query($q);
+
+        $count = 0;
+        echo "<tr>";
+        while($row = $result -> fetch_array()){
+          $name = $row['brandName'];
+          $img = $row['logoURL'];
+          $id = $row['brandID'];
+          echo '<td class="car-logo">';
+          echo '<label for="'.$id.'"><img class="LogoBrand" src="'.$img.'" alt="'.$name.'">';
+          echo '<center><br><br>';
+          echo '<input type="radio" class ="radio"  name="select" value="'.$id.'" id = "'.$id.'"></label></center>';
+
+
+          echo "</td>";
+          $count = $count +1;
+          if ($count >= 7){
+            $count = 0;
+            echo'<tr></tr>';
+          }
+
+        }
+
+
+        ?>
         </tr>
       </table>
     </center>
-
-    <a href="Booking2.php"><button class="button">NEXT STEP</button></a>
-
-  </body>
+    <input type=submit class = 'button fixed-button' VALUE="NEXT STEP">
+  </form>
+</body>
 </html>

@@ -77,10 +77,29 @@ nav a:hover:before{
   width: 100%;
   height: auto;
 }
+table, th, td{
+  position:relative;
+}
 
+.letters{
+  color: #333333;
+  font-size: 25px;
+  text-decoration:none;
 
+}
+.letters:hover{
+  color: #AAAAAA;
+}
+.radio{
+  position: absolute;
+  bottom: 0;
+}
+.brand-name{
+  position: absolute;
+  bottom: 1;
+}
 .car-logo:hover{
-  opacity: 0.3;
+opacity: 0.3;
 }
 
 .button {
@@ -91,6 +110,11 @@ nav a:hover:before{
     border: 1px solid #555555;
     padding: 1% 2%;
     font-size: 16px;
+}
+.fixed-button{
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
 
 .button:hover {

@@ -10,7 +10,7 @@
       <li></li>
       <li></li>
       <li></li>
-        <li><?php if(isset($_SESSION["user"])){
+        <li><a href="login.php"><?php if(isset($_SESSION["user"])){
           echo "LOG OUT";
         }else{
           echo "LOG IN";
