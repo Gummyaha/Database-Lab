@@ -1,5 +1,12 @@
 <?php
   session_start();
+  require_once('connect.php');
+  if(isset($_POST['model'])){
+    $q = 'SELECT price,name,brandName,description FROM product,brands where brandID = manufacturer AND productID = '.$_POST['model'];
+    //echo $q;
+  }else{
+    header('Location:Booking.php');
+  }
  ?>
 <html>
 <link rel="stylesheet" href="Booking.css"/>
@@ -9,29 +16,9 @@
 
   <header>
 <!--MENU Bar-->
-      <div class= "container">
-        <nav class= "nav">
-          <ul>
-              <li><a href="index.php">HOME</a></li>
-              <li><a href="index.php">NEWS</a></li>
-              <li><a href="index.php">MODELS</a></li>
-              <li><a href="Booking.php">BOOKING</a></li>
-              <li><a href="index.php">CONTACT US</a></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li><a href="login.php">
-                <?php if(isset($_SESSION["user"])){
-                  echo "LOG OUT";
-                }else{
-                  echo "LOG IN";
-                }
-                ?>
-              </a></li>
-              </ul>
-        </nav>
-      </div>
+    <?php
+    require_once('menu.php');
+    ?>
   </header>
 
   <body>
@@ -53,7 +40,11 @@
   <center>
     <br>
     <br>
-    <h2>" Mercedes-Maybach 6 "</h2>
+    <?php
+    $results = $mysqli->query($q);
+    $row = $results -> fetch_array();
+    ?>
+    <h2>" <?php echo $row['name'] ?> "</h2>
     <br>
     <img style="width: 65%; height: auto;" src="maybach.png">
     <br>
@@ -61,10 +52,10 @@
     <table>
       <tr>
         <td style="font-size: 1.3rem;">
-          <b>Brand:</b>
+          <b>Manufacturer:</b>
         </td>
         <td style="font-size: 1.3rem; margin-left: 2%;">
-          Mercedes-Benz
+          <?php echo $row['brandName'] ?>
         </td>
       </tr>
 
@@ -73,7 +64,7 @@
           <b>Model:</b>
         </td>
         <td style="font-size: 1.3rem; margin-left: 2%;">
-          Maybach 6
+          <?php echo $row['name'] ?>
         </td>
       </tr>
 
@@ -82,7 +73,7 @@
           <b>Price:</b>
         </td>
         <td style="font-size: 1.3rem; margin-left: 2%;">
-          555,555,555 ฿
+          <?php echo $row['price'] ?>
         </td>
       </tr>
 
