@@ -15,7 +15,7 @@
           <ul>
               <li><a href="#home">HOME</a></li>
               <li><a href="#news">NEWS</a></li>
-              <li><a href="#models">MODELS</a></li>
+              <li><a href="Model.php">MODELS</a></li>
               <li><a href="Booking.php">BOOKING</a></li>
               <li><a href="#contact">CONTACT US</a></li>
               <li></li>
