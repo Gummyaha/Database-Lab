@@ -147,3 +147,21 @@ tr:hover .right-hand{
   font-size: 16px;
   cursor: pointer;
 }
+
+textarea{
+    width: 30%;
+    height: 15%;
+    padding: 12px 20px;
+    margin: 9px 0;
+    box-sizing: border-box;
+    border: 1px solid #d1d1d1;
+    transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    font-size: 16px;
+}
+
+textarea:focus {
+    border: 1px solid #7c7c7c;
+    font-size: 16px;
+}

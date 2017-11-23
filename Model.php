@@ -90,9 +90,9 @@
       <br>
 
       <h3>COMMENT</h3>
-      <textarea style="margin:0% 0% 3% 0%;" rows="6" cols="50">comment here...</textarea>
+      <textarea style="color: #7c7c7c; margin:0% 0% 3% 0%;" rows="6" cols="50">comment here...</textarea>
       <br>
-      <button class="button" style="margin:0% 0% 0% 13%;">Comment</button>
+      <button class="button" style="margin:0% 0% 0% 20%;">Comment</button>
 
     </center>
     <br>
