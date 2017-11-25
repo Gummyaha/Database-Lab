@@ -163,5 +163,5 @@ textarea{
 
 textarea:focus {
     border: 1px solid #7c7c7c;
-    font-size: 16px;
+    font-size: 16px; /*eiei*/
 }

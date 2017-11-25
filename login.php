@@ -57,6 +57,7 @@ if(isset($_POST["user"]) && isset($_SESSION["prevPage"])){
                 <input type="password" placeholder="Enter Password" name="password" required><br>
                 </tr>
                 <button type="submit">Login</button>
+                <a href="signup.php"><button class="signup">SIGN UP</button></a>
                 <input type="checkbox" checked="checked"> Remember me
                 </div>';
               }

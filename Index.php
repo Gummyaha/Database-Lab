@@ -1,6 +1,6 @@
 <?php
   session_start();
- ?>
+?>
 <html>
 
 <link rel="stylesheet" href="main.css"/>
@@ -10,9 +10,12 @@
 
   <header>
 <!--MENU Bar-->
+<<<<<<< HEAD
+=======
       <?php
       require_once('menu.php');
       ?>
+>>>>>>> master
     </header>
 
 
