@@ -49,7 +49,7 @@ require_once("connect.php");
 
 <br>
 <br>
-      <a href="admin.html"><button class="button" style= "padding: .5% 2% .5% 2%;">BACK</button></a>
+      <a href="admin.php"><button class="button" style= "padding: .5% 2% .5% 2%;">BACK</button></a>
 
 
 </center>

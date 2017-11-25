@@ -1,10 +1,6 @@
-<?php
-session_start();
-require_once('connect.php');
-?>
 <html>
 <link rel="stylesheet" href="Booking.css"/>
-<head>
+<head>s
   <title> THE CAR : Booking</title>
 </head>
 
@@ -12,7 +8,9 @@ require_once('connect.php');
   <!--MENU Bar-->
   <?php
   require_once('menu.php');
-
+  if(!isset($_SESSION['user'])){
+    header("Location:login.php");
+  }
   ?>
 </header>
 
