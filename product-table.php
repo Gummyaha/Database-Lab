@@ -5,11 +5,34 @@ require_once("connect.php");
  ?>
 
 <head>
-  <title>Product Table</title>
-</head>
+  <title> Product Table Table</title>
+  <link rel="stylesheet" href="main.css"/>
+  <header>
+<!--MENU Bar-->
+      <div class= "container">
+        <nav class= "nav">
+          <ul>
+            <li><a href="index.php">HOME</a></li>
+            <li><a href="index.php">NEWS</a></li>
+            <li><a href="index.php">MODELS</a></li>
+            <li><a href="Booking.php">BOOKING</a></li>
+            <li><a href="index.php">CONTACT US</a></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+              <li><a href="login.php">LOG OUT
+              </a></li>
+
+          </ul>
+        </nav>
+      </div>
+    </header>
+  </head>
 
 <body>
-  <h1 style = "margin: 5% 0% 5% 10%">Product Table</h1>
+  <!-- <h1 style = "margin: 5% 0% 5% 10%">Product Table</h1> -->
+<img style="margin: 2% 0% 5% 0%;" src="produc table.png">
 
 <center>
   <table class="usertable" style="border-collapse: collapse; width: 60%;">
@@ -49,7 +72,7 @@ require_once("connect.php");
 
 <br>
 <br>
-      <a href="admin.html"><button class="button" style= "padding: .5% 2% .5% 2%;">BACK</button></a>
+      <a href="admin.html"><button class="button">BACK</button></a>
 
 
 </center>

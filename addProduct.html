@@ -29,8 +29,11 @@
       </div>
     </header>
     <center>
-      <label style = "font-size: 30;">ADD PRODUCT<label>
-    <table style = "border-style: groove">
+      <!-- <label style = "font-size: 30;">ADD PRODUCT<label> -->
+      <img style="margin-top: 2%;" src="addproduct.png">
+      <br>
+      <br>
+    <table>
       <tr>
         <form action="add.php" method = "post">
           <input type = "hidden" name = "page" value = "product">
@@ -65,14 +68,14 @@
           <b><label>Description:</label></b>
         </td>
         <td>
-          <textarea rows="3" cols="70" name = 'desc' placeholer = "Enter Description"></textarea>
+          <textarea rows="5" cols="70" name = 'desc' placeholer = "Enter Description"></textarea>
         </td>
 
       </tr>
       </tr>
 
     </table>
-      <input type = "submit">
+      <input class="button" type = "submit">
     </form>
   </center>
 </body>
