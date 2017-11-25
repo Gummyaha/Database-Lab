@@ -78,9 +78,17 @@ nav a:hover:before{
   height: auto;
 }
 table, th, td{
+
   position:relative;
 }
-
+.date-pick{
+  position: absolute;
+  left: 30;
+  top: 30;
+  color: #333333;
+  font-size: 25px;
+    text-decoration:none;
+}
 .letters{
   color: #333333;
   font-size: 25px;

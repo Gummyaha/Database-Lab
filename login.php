@@ -10,7 +10,7 @@ if(isset($_POST["logOut"])){
 if(isset($_POST["user"]) && isset($_SESSION["prevPage"])){
   if($_SESSION["prevPage"] == "login" && $_POST["user"] == "Admin"){
     $_SESSION["prevPage"] ="admin";
-    header("Location: admin.html");
+    header("Location: admin.php");
   }else {
     $_SESSION["prevPage"] = "login";
   }
@@ -29,31 +29,9 @@ if(isset($_POST["user"]) && isset($_SESSION["prevPage"])){
 
   <header>
     <!--MENU Bar-->
-    <div class= "container">
-      <nav class= "nav">
-        <ul>
-            <li><a href="index.php#home">HOME</a></li>
-            <li><a href="index.php#news">NEWS</a></li>
-            <li><a href="index.php#models">MODELS</a></li>
-            <li><a href="index.php#contact">CONTACT US</a></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li><a href="login.php">
-              <?php if(isset($_SESSION["user"])){
-                echo "LOG OUT";
-              }else{
-                echo "LOG IN";
-              }
-              ?>
-            </a></li>
-
-        </ul>
-      </nav>
-    </div>
+    <?php
+    require_once('menu.php')
+    ?>
     </header>
 
 

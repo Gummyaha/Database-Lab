@@ -10,30 +10,12 @@
 
   <header>
 <!--MENU Bar-->
-      <div class= "container">
-        <nav class= "nav">
-          <ul>
-              <li><a href="#home">HOME</a></li>
-              <li><a href="#news">NEWS</a></li>
-              <li><a href="#models">MODELS</a></li>
-              <li><a href="Booking.php">BOOKING</a></li>
-              <li><a href="#contact">CONTACT US</a></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li><a href="login.php">
-                <?php if(isset($_SESSION["user"])){
-                  echo "LOG OUT";
-                }else{
-                  echo "LOG IN";
-                }
-                ?>
-              </a></li>
-
-          </ul>
-        </nav>
-      </div>
+<<<<<<< HEAD
+=======
+      <?php
+      require_once('menu.php');
+      ?>
+>>>>>>> master
     </header>
 
 
