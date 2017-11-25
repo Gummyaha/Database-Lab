@@ -9,7 +9,23 @@
       <li></li>
       <li></li>
       <li></li>
-      <li></li>
+      <li><?php
+      require_once('connect.php');
+      if(session_id() == '') {
+        session_start();
+      }
+
+      if(isset($_SESSION["user"])){
+
+
+        if($_SESSION["user"]){
+          echo '<a href="admin.php">'.$_SESSION["user"].'</a>';
+        }
+
+      }else{
+
+      }?>
+      </a></li>
         <li><a href="login.php"><?php if(isset($_SESSION["user"])){
           echo "LOG OUT";
         }else{

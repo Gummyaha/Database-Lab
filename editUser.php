@@ -22,7 +22,7 @@ if(isset($_GET['user'])){
   <header>
 <!--MENU Bar-->
       <?php
-      require_once(menu.html);
+      require_once('menu.php');
       ?>
     </header>
     <center>
@@ -47,7 +47,7 @@ if(isset($_GET['user'])){
         </td>
         <td>
           <input type="text" value =
-            <?php echo '"'.$row['fname'].'"'; ?>
+            <?php echo '"'.$row['fName'].'"'; ?>
           placeholder="Enter First Name" name="fname" required>
         </td>
       </tr>
@@ -57,7 +57,7 @@ if(isset($_GET['user'])){
         </td>
         <td>
           <input type="text" value =
-            <?php echo '"'.$row['lname'].'"'; ?>
+            <?php echo '"'.$row['lName'].'"'; ?>
             placeholder="Enter Last Name" name="lname" required>
         </td>
 

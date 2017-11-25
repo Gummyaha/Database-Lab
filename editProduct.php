@@ -22,7 +22,7 @@ if(isset($_GET['prod'])){
   <header>
     <!--MENU Bar-->
     <?php
-    require_once(menu.html);
+    require_once('menu.php');
     ?>
   </header>
   <center>
