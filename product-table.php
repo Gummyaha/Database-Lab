@@ -5,7 +5,7 @@ require_once("connect.php");
  ?>
 
 <head>
-  <title> Product Table Table</title>
+  <title> Product Table </title>
   <link rel="stylesheet" href="main.css"/>
   <header>
 <!--MENU Bar-->
