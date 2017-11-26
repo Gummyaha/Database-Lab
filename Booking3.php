@@ -33,29 +33,33 @@
   <br>
   <br>
   <form action="Booking4.php" method="post">
+<center>
 <table>
   <tr>
-    <td style="border-right-style:solid; border-color:#DDDDDD ;">
-    <?php
-    echo '<input type="hidden"  name="model" value = '.$_POST['model'].'>';
-    $q = 'SELECT * FROM branch';
-    $results = $mysqli -> query($q);
-    while($row = $results->fetch_array()){
-      echo '<br>';
-      echo '<label class="radio-container" style="margin-left: 45%;">';
-      echo '<input type="radio" checked="radio" name="branch" value = '.$row["branchID"].'>';
-      echo $row['name'];
-      echo '<span class="checkmark"></span>';
-      echo '</label>';
-
-    }
-    ?>
-  </td>
-  <td>
-    <input type="date" name="date" class="date-pick">
-  </td>
-</tr>
+    <td style="border-right-style:solid; border-color:white ;">
+      <?php
+      echo '<input type="hidden"  name="model" value = '.$_POST['model'].'>';
+      $q = 'SELECT * FROM branch';
+      $results = $mysqli -> query($q);
+      while($row = $results->fetch_array()){
+        echo '<br>';
+        echo '<label class="radio-container" style="margin-left: 45%;">';
+        echo '<input type="radio" checked="radio" name="branch" value = '.$row["branchID"].'>';
+        echo $row['name'];
+        echo '<span class="checkmark"></span>';
+        echo '</label>';
+      }
+      ?>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h3> Select date: </h3> <input type="date" name="date" class="date-pick">
+    </td>
+  </tr>
 </table>
+
+</center>
     <br>
 
     <br>

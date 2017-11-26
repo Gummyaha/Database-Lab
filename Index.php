@@ -10,12 +10,10 @@
 
   <header>
 <!--MENU Bar-->
-<<<<<<< HEAD
-=======
       <?php
       require_once('menu.php');
       ?>
->>>>>>> master
+
     </header>
 
 
@@ -89,7 +87,7 @@
         <div class="polaroid">
           <div class="image">
             <div class="model-img">
-              <a href="modelDisplay.php"><img src="Model-test111.png" style="width: 100%;"></a>
+              <a href="Model.php"><img src="Model-test111.png" style="width: 100%;"></a>
             </div>
           </div>
         </div>
@@ -101,7 +99,7 @@
         <div class="polaroid">
           <div class="image">
             <div class="model-img">
-              <a href="modelDisplay.php"><img src="Model-test22.png" style="width: 100%;"></a>
+              <a href="Model.php"><img src="Model-test22.png" style="width: 100%;"></a>
             </div>
           </div>
         </div>
@@ -113,7 +111,7 @@
         <div class="polaroid">
           <div class="image">
             <div class="model-img">
-              <a href="modelDisplay.php"><img src="Model-test33.png" style="width: 100%;"></a>
+              <a href="Model.php"><img src="Model-test33.png" style="width: 100%;"></a>
             </div>
           </div>
         </div>
