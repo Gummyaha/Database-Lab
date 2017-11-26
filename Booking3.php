@@ -21,7 +21,7 @@
 
 <body>
   <img class="banner" src="Banner-Car3.png"><br>
-  <img class="ChooseBrand" style="float: right; width:90%"; src="Head-Choose-Model.png">
+  <img class="ChooseBrand" style="float: right; width:90%"; src="branch-head.png">
   <br>
   <br>
   <br>

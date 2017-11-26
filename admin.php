@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!-- insert navigation bar here-->
 <html>
 <link rel="stylesheet" href="main.css"/>

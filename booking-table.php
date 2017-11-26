@@ -17,11 +17,13 @@ require_once("connect.php");
   <title> Booking Table</title>
   <link rel="stylesheet" href="main.css"/>
   <header>
-    <!--MENU Bar-->
-    <?php require_once('menu.php');
+
+    <?php
+    require_once('menu.php');
     ?>
   </header>
-</head>
+  </head>
+
 
 <body>
   <!-- <h1 style = "margin: 5% 0% 5% 10%">Product Table</h1> -->
@@ -157,9 +159,11 @@ require_once("connect.php");
       ?>
     </table>
 
+
     <br>
     <br>
     <a href="admin.php"><button class="button">BACK</button></a>
+
 
 
   </center>

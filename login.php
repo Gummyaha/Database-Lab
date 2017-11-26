@@ -1,8 +1,10 @@
+<?php session_start(); ?>
+
 <html>
 <link rel="stylesheet" href="main.css"/>
 <link rel="stylesheet" href="model.css"/>
 <head>
-  <title> ADMIN </title>
+  <title> LOGIN </title>
 </head>
 
 <body>
@@ -11,7 +13,6 @@
     <!--MENU Bar-->
     <?php
     require_once('menu.php');
-
     ?>
   </header>
 
@@ -48,20 +49,18 @@
 
             }
             if(isset($_SESSION['logError'])){
-            if($_SESSION['logError']=='disabled'){
-              echo 'Account is diabled, please contact an Administrator';
-            }else if($_SESSION['logError']=='wrong'){
-              echo 'Password is incorrect';
-            }else if($_SESSION['logError']=='notFound'){
-              echo 'Account does not exist';
+              if($_SESSION['logError']=='disabled'){
+                echo 'Account is diabled, please contact an Administrator';
+              }else if($_SESSION['logError']=='wrong'){
+                echo 'Password is incorrect';
+              }else if($_SESSION['logError']=='notFound'){
+                echo 'Account does not exist';
+              }
+              unset($_SESSION['logError']);
             }
-            unset($_SESSION['logError']);
-          }
             ?>
           </div>
-          <?php
 
-          ?>
         </center>
 
 

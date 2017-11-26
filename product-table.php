@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
 
 <?php
@@ -63,7 +64,7 @@ require_once("connect.php");
 
           }
       }else{
-        echo "FUCK";
+        echo "Something went wrong";
       }
 
 
@@ -72,11 +73,9 @@ require_once("connect.php");
 
 <br>
 <br>
-<<<<<<< HEAD
-      <a href="admin.php"><button class="button">BACK</button></a>
-=======
+
       <a href="admin.php"><button class="button" style= "padding: .5% 2% .5% 2%;">BACK</button></a>
->>>>>>> master
+
 
 
 </center>
