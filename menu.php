@@ -1,3 +1,6 @@
+<?php if(session_id() == '') {
+  session_start();
+}?>
 <div class= "container">
   <nav class= "nav">
     <ul>
@@ -11,9 +14,7 @@
       <li></li>
       <li><?php
       require_once('connect.php');
-      if(session_id() == '') {
-        session_start();
-      }
+
 
       if(isset($_SESSION["user"])){
 

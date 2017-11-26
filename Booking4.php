@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <html>
 <link rel="stylesheet" href="Booking.css"/>
   <head>
@@ -77,10 +78,10 @@
 
       <tr>
         <td style="font-size: 1.3rem;">
-          <b>Your Location:</b>
+          <b>Location:</b>
         </td>
         <td style="font-size: 1.3rem; margin-left: 2%;">
-          1/23 sdvfwslaknfiegns;egnsengserngtrks'nbnksb
+          <?php echo $row['location'] ?>
         </td>
       </tr>
     </table>
