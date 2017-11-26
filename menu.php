@@ -20,9 +20,9 @@
 
 
         if($_SESSION["role"] == 2){
-          echo '<a href="admin.php">'.$_SESSION["user"].'</a>';
+          echo '<a href="admin.php">'.$_SESSION["role"].'</a>';
         }else{
-          echo '<a href="user.php">'.$_SESSION["user"].'</a>';
+          echo '<a href="user.php">'.$_SESSION["role"].'</a>';
         }
 
       }else{

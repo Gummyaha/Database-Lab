@@ -1,5 +1,11 @@
 <?php
     require_once('connect.php');
+    session_start();
+    if(!isset($_SESSION['role'])){
+      header('Location: login.php');
+    }elseif($_SESSION['role'] != 2){
+      header('Location: index.php');
+    }
   //adding to both, if it didn't come from an add page, redirects to index.
   if(isset($_POST['page'])){
     if($_POST['page'] == 'product'){

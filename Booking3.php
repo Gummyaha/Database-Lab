@@ -10,7 +10,7 @@
   <?php
   require_once('menu.php');
   if(isset($_POST['model'])){
-    $q = 'SELECT productID, name FROM product where manufacturer = (SELECT brandID from brands where brandID = '.$_POST['select'].')';
+    $q = 'SELECT productID, name FROM product where manufacturer = (SELECT brandID from brands where brandID = '.$_POST['model'].')';
     //echo $q;
   }else{
     header('Location:Booking2.php');
