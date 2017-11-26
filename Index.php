@@ -13,6 +13,9 @@ session_start();
   require_once('menu.php');
   ?>
 
+
+
+
 </header>
 
 
@@ -79,94 +82,109 @@ session_start();
               <img src="Models-Header.png" style="width:40%; float: left">
             </div>
 
-            <center>
-              <table class="model-table">
-                <tr>
-                  <td>
-                    <div class="polaroid">
-                      <div class="image">
-                        <div class="model-img">
-                          <a href="modelDisplay.php"><img src="Model-test111.png" style="width: 100%;"></a>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
 
-                <tr>
-                  <td>
-                    <div class="polaroid">
-                      <div class="image">
-                        <div class="model-img">
-                          <a href="modelDisplay.php"><img src="Model-test22.png" style="width: 100%;"></a>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
+        </td>
+      </tr>
+    </table>
+</center>
 
-                <tr>
-                  <td>
-                    <div class="polaroid">
-                      <div class="image">
-                        <div class="model-img">
-                          <a href="modelDisplay.php"><img src="Model-test33.png" style="width: 100%;"></a>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-              <button class="button">SEE MORE</button>
-            </center>
+<center>
+  <button class="button">LOAD MORE</button>
+</center>
+
+<!-- MODELS -->
+  <div class="header-title-Models" id="models">
+    <img src="Models-Header.png" style="width:40%; float: left">
+  </div>
+
+<center>
+  <table class="model-table">
+    <tr>
+      <td>
+        <div class="polaroid">
+          <div class="image">
+            <div class="model-img">
+              <a href="Model.php"><img src="Model-test111.png" style="width: 100%;"></a>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="polaroid">
+          <div class="image">
+            <div class="model-img">
+              <a href="Model.php"><img src="Model-test22.png" style="width: 100%;"></a>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="polaroid">
+          <div class="image">
+            <div class="model-img">
+              <a href="Model.php"><img src="Model-test33.png" style="width: 100%;"></a>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <button class="button">SEE MORE</button>
+</center>
 
 
 
 
-            <!--Contact-->
-            <center>
-              <div class="header-title-Contact" id="contact">
-                <img src="ContacUst-Header2.png">
-              </div>
-              <br>
-              <br>
-            </center>
+<!--Contact-->
+<center>
+  <div class="header-title-Contact" id="contact">
+    <img src="ContacUst-Header2.png">
+  </div>
+  <br>
+  <br>
+</center>
 
-            <!-- Google Map-->
-            <div id="googleMap" style="width:20%; height:350px; border-radius: 3px; float:left; margin: 0% 5% 3% 30%;"></div>
+  <!-- Google Map-->
+  <div id="googleMap" style="width:20%; height:350px; border-radius: 3px; float:left; margin: 0% 5% 3% 30%;"></div>
 
-            <script>
-            function myMap()
-            {
-              myCenter=new google.maps.LatLng(13.75398, 100.50144);
-              var mapOptions= {
-                center:myCenter,
-                zoom:12, scrollwheel: false, draggable: false,
-                mapTypeId:google.maps.MapTypeId.ROADMAP
-              };
-              var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-              var marker = new google.maps.Marker({position: myCenter});
-              marker.setMap(map);
-            }
-            </script>
+  <script>
+    function myMap()
+    {
+      myCenter=new google.maps.LatLng(13.75398, 100.50144);
+      var mapOptions= {
+      center:myCenter,
+      zoom:12, scrollwheel: false, draggable: false,
+      mapTypeId:google.maps.MapTypeId.ROADMAP
+      };
+      var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+      var marker = new google.maps.Marker({position: myCenter});
+      marker.setMap(map);
+    }
+  </script>
 
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtppcpytNGMABs65egaPMz72ql-4YKD7I&callback=myMap"></script>
-            <!--End Map-->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtppcpytNGMABs65egaPMz72ql-4YKD7I&callback=myMap"></script>
+  <!--End Map-->
 
-            <form>
-              <label for="name">Name</label><br>
-              <input type="text" id="name" name="name" placeholder="Your Name"><br>
-              <label for="Email">Email</label><br>
-              <input type="text" id="Email" name="Email" placeholder="Email"><br>
-              <label for="Message">Message</label><br>
-              <input type="text" id="Message" name="Message" placeholder="Your Message"><br>
-            </form>
+  <form>
+    <label for="name">Name</label><br>
+    <input type="text" id="name" name="name" placeholder="Your Name"><br>
+    <label for="Email">Email</label><br>
+    <input type="text" id="Email" name="Email" placeholder="Email"><br>
+    <label for="Message">Message</label><br>
+    <input type="text" id="Message" name="Message" placeholder="Your Message"><br>
+  </form>
 
-            <br>
-            <button class="button-black" type="submit">SEND MESSAGE</button>
-            <br>
-            <img src="social.png">
+<br>
+  <button class="button-black" type="submit">SEND MESSAGE</button>
+<br>
+  <img src="social.png">
 
-            <img src="footer.png">
-          </body>
-          </html>
+<img src="footer.png">
+  </body>
+</html>
