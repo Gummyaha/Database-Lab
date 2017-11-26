@@ -64,7 +64,7 @@ require_once("connect.php");
 
           }
       }else{
-        echo "FUCK";
+        echo "Something went wrong";
       }
 
 

@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="main.css"/>
 <link rel="stylesheet" href="model.css"/>
 <head>
-  <title> ADMIN </title>
+  <title> LOGIN </title>
 </head>
 
 <body>

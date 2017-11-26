@@ -73,7 +73,13 @@
       <br>
       <button class="button" style="margin:0% 0% 0% 20%;">Comment</button>
 
-    </center>
+      </center>
+      <br>
+      <hr style="margin-top: 3%; border-top: 1px solid #f2f2f2; ">
+
+    <h2 style="margin: 1% 0% 2% 25%; color: #333333;"> Dude1 <span style="font-size: 14px;"> : 12/12/2017</span></h2>
+    <p> <span style="margin: 1% 0% 2% 30%; color: grey;">  comment comment comment comment comment comment comment comment comment </span> </p>
+      <hr style="margin-top: 2%; border-top: 1px solid #f2f2f2;">
     <br>
 
 

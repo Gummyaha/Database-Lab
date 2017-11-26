@@ -4,6 +4,7 @@ session_start();
 <html>
 
 <link rel="stylesheet" href="main.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <head>
   <title> THE CAR </title>
 </head>
@@ -73,24 +74,6 @@ session_start();
               </table>
             </center>
 
-            <center>
-              <button class="button">LOAD MORE</button>
-            </center>
-
-            <!-- MODELS -->
-            <div class="header-title-Models" id="models">
-              <img src="Models-Header.png" style="width:40%; float: left">
-            </div>
-
-
-        </td>
-      </tr>
-    </table>
-</center>
-
-<center>
-  <button class="button">LOAD MORE</button>
-</center>
 
 <!-- MODELS -->
   <div class="header-title-Models" id="models">
@@ -144,7 +127,7 @@ session_start();
 <!--Contact-->
 <center>
   <div class="header-title-Contact" id="contact">
-    <img src="ContacUst-Header2.png">
+    <img src="newsletter.png">
   </div>
   <br>
   <br>
@@ -170,20 +153,18 @@ session_start();
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtppcpytNGMABs65egaPMz72ql-4YKD7I&callback=myMap"></script>
   <!--End Map-->
-
+  <br>
+  <br>
+  <i class="fa fa-map-marker"></i>Bangkok, Thailand<br><br>
+  <i class="fa fa-phone"></i>Phone: 080 000 0000<br><br>
   <form>
-    <label for="name">Name</label><br>
-    <input type="text" id="name" name="name" placeholder="Your Name"><br>
     <label for="Email">Email</label><br>
     <input type="text" id="Email" name="Email" placeholder="Email"><br>
-    <label for="Message">Message</label><br>
-    <input type="text" id="Message" name="Message" placeholder="Your Message"><br>
   </form>
 
 <br>
-  <button class="button-black" type="submit">SEND MESSAGE</button>
+  <button class="button-black" type="submit">Subscribe</button>
 <br>
-  <img src="social.png">
 
 <img src="footer.png">
   </body>

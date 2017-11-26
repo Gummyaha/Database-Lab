@@ -12,24 +12,9 @@ require_once("connect.php");
   <link rel="stylesheet" href="main.css"/>
   <header>
 <!--MENU Bar-->
-      <div class= "container">
-        <nav class= "nav">
-          <ul>
-            <li><a href="index.php">HOME</a></li>
-            <li><a href="index.php">NEWS</a></li>
-            <li><a href="index.php">MODELS</a></li>
-            <li><a href="Booking.php">BOOKING</a></li>
-            <li><a href="index.php">CONTACT US</a></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-              <li><a href="login.php">LOG OUT
-              </a></li>
-
-          </ul>
-        </nav>
-      </div>
+<?php
+require_once('menu.php');
+?>
     </header>
     <center>
       <!-- <label style = "font-size: 30;">ADD PRODUCT<label> -->
@@ -67,7 +52,7 @@ require_once("connect.php");
 
           }
       }else{
-        echo "FUCK";
+        echo "Something went wrong";
       }
 
 
