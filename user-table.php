@@ -78,7 +78,7 @@ require_once("connect.php");
 <br>
 <br>
 <<<<<<< HEAD
-      <a href="admin.html"><button class="button">BACK</button></a>
+      <a href="admin.php"><button class="button">BACK</button></a>
 =======
       <a href="admin.php"><button class="button" style= "padding: .5% 2% .5% 2%;">BACK</button></a>
 >>>>>>> master
