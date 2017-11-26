@@ -56,7 +56,10 @@
               }else if($_SESSION['logError']=='notFound'){
                 echo 'Account does not exist';
               }
+
               unset($_SESSION['logError']);
+            }else if($_GET['m'] == 'suc'){
+              echo 'Sign up Success!';
             }
             ?>
           </div>

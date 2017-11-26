@@ -1,11 +1,6 @@
 <?php
     require_once('connect.php');
     session_start();
-    if(!isset($_SESSION['role'])){
-      header('Location: login.php');
-    }elseif($_SESSION['role'] != 2){
-      header('Location: index.php');
-    }
   //adding to both, if it didn't come from an add page, redirects to index.
   if(isset($_POST['page'])){
     if($_POST['page'] == 'product'){
@@ -21,16 +16,22 @@
         }else{
           echo "Failure to add product";
         }
-    }elseif($_POST['page']=='customer'){
+    }elseif($_POST['page']=='customer' or $_POST['page']=='signup'){
         $fname = $_POST['fname'];
         $lname= $_POST['lname'];
         $uname= $_POST['user'];
         $email = $_POST['email'];
-        $q = "INSERT INTO customer (fName, lName, username, email)
-        VALUES ('".$fname."','".$lname."','".$uname."','".$email."')";
+        $pass = $_POST['pass'];
+        $q = "INSERT INTO customer (fName, lName, username, email, password)
+        VALUES ('".$fname."','".$lname."','".$uname."','".$email."','".$pass."')";
         $results = $mysqli->query($q);
         if($results){
-          header("Location: user-table.php");
+          if($_POST['page'] == 'customer'){
+            header("Location: user-table.php");
+          }else{
+            header("Location: login.php?m=suc");
+          }
+
         }else{
           echo "Failure to add customer";
         }
