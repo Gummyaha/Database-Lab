@@ -1,4 +1,7 @@
-<?php session_start() ?>
+<?php session_start();
+if(!isset($_SESSION['user'])){
+  header("Location:login.php");
+}?>
 <html>
 <link rel="stylesheet" href="Booking.css"/>
 <head>s
@@ -9,9 +12,7 @@
   <!--MENU Bar-->
   <?php
   require_once('menu.php');
-  if(!isset($_SESSION['user'])){
-    header("Location:login.php");
-  }
+
   ?>
 </header>
 
