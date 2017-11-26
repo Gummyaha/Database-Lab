@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
 <link rel="stylesheet" href="Booking.css"/>
 <head>
@@ -58,7 +59,6 @@
     </td>
   </tr>
 </table>
-
 </center>
     <br>
 
