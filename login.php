@@ -1,22 +1,6 @@
 <?php
 //session storage
-session_start();
-if(isset($_POST["user"])){
-  $_SESSION["user"] = $_POST["user"];
-}
-if(isset($_POST["logOut"])){
-  session_unset();
-}
-if(isset($_POST["user"]) && isset($_SESSION["prevPage"])){
-  if($_SESSION["prevPage"] == "login" && $_POST["user"] == "Admin"){
-    $_SESSION["prevPage"] ="admin";
-    header("Location: admin.php");
-  }else {
-    $_SESSION["prevPage"] = "login";
-  }
-}else{
-  $_SESSION["prevPage"] = "login";
-}
+
 ?>
 <html>
 <link rel="stylesheet" href="main.css"/>
@@ -30,42 +14,61 @@ if(isset($_POST["user"]) && isset($_SESSION["prevPage"])){
   <header>
     <!--MENU Bar-->
     <?php
-    require_once('menu.php')
+    require_once('menu.php');
+
     ?>
-    </header>
+  </header>
 
 
-    <br>
-    <br>
-    <br>
-    <center style="margin: 50px;">
+  <br>
+  <br>
+  <br>
+  <center style="margin: 50px;">
 
-      <form action="login.php" method = "post">
-        <div style="width: 40%; padding: 5%;">
-          <td>
-            <tr class = "loginBox";>
+    <form action="loginCheck.php" method = "post">
+      <div style="width: 40%; padding: 5%;">
+        <td>
+          <tr class = "loginBox";>
 
-              <?php
-              if(isset($_SESSION["user"])){
-                echo '<button type="submit" name="logOut" value = "logOut">Log Out</button></td></tr>';
-              }else{
-                echo '<label><b>Username:</b></label>
-                <input type="text" placeholder="Enter Username" name="user" required><br>
-                </tr>
-                <tr>
-                <label><b>Password:</b></label>
-                <input type="password" placeholder="Enter Password" name="password" required><br>
-                </tr>
-                <button type="submit">Login</button>
-                <a href="signup.php"><button class="signup">SIGN UP</button></a>
-                <input type="checkbox" checked="checked"> Remember me
-                </div>';
-              }
-              ?>
-            </form>
-          </center>
+            <?php
+            if(isset($_SESSION["user"])){
+              echo '<button type="submit" name="logOut" value = "logOut">Log Out</button></td></tr>';
 
+            }else{
+              echo '<label><b>Username:</b></label>
+              <input type="text" placeholder="Enter Username" name="user" required><br>
+              </tr>
+              <tr>
+              <label><b>Password:</b></label>
+              <input type="password" placeholder="Enter Password" name="password" required><br>
+              </tr>
+              <button type="submit">Login</button>
+              </form>
+              <form action = "signup.php">
+              <button class="signup">Sign Up</button>
+              <input type="checkbox" checked="checked"> Remember me
+              </form>';
 
 
-        </body>
-        </html>
+            }
+            if(isset($_SESSION['logError'])){
+            if($_SESSION['logError']=='disabled'){
+              echo 'Account is diabled, please contact an Administrator';
+            }else if($_SESSION['logError']=='wrong'){
+              echo 'Password is incorrect';
+            }else if($_SESSION['logError']=='notFound'){
+              echo 'Account does not exist';
+            }
+            unset($_SESSION['logError']);
+          }
+            ?>
+          </div>
+          <?php
+
+          ?>
+        </center>
+
+
+
+      </body>
+      </html>

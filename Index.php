@@ -1,35 +1,37 @@
 <?php
-  session_start();
+session_start();
 ?>
 <html>
 
 <link rel="stylesheet" href="main.css"/>
-  <head>
-    <title> THE CAR </title>
-  </head>
+<head>
+  <title> THE CAR </title>
+</head>
 
-  <header>
-<!--MENU Bar-->
-      <?php
-      require_once('menu.php');
-      ?>
-
-    </header>
+<header>
+  <?php
+  require_once('menu.php');
+  ?>
 
 
 
 
-  <body>
+</header>
+
+
+
+
+<body>
 
 
   <img src="Car2.png" id="home">
 
-<!-- NEWS -->
-    <div class="header-title-news" id="news">
-      <img style="float: right; width:85%"; src="News-Header_fix.png">
-    </div>
+  <!-- NEWS -->
+  <div class="header-title-news" id="news">
+    <img style="float: right; width:85%"; src="News-Header_fix.png">
+  </div>
 
- <center>
+  <center>
     <table style="width:80%; position: center;">
       <tr>
         <td class="pol-col">
@@ -39,32 +41,47 @@
               <div class= "middle"><a href="News.html">
                 <div class="text">READ</div></a>
               </div>
-            <div class="banner-container">
-              <p> <b>MAZDA</b> promises evolution of RX-Vision 2017 concept Tokyo Motor Show </p>
-            </div>
-          </div>
-        </td>
-        <td class="pol-col">
-          <div class="polaroid">
-            <a href="News2.html"><img src="img_News1.png" class= "image" style="width:100%"></a>
-            <a href="News2.html">
-              <div class= "middle"><a href="News2.html">
-                <div class="text"> READ</div></a>
+              <div class="banner-container">
+                <p> <b>MAZDA</b> promises evolution of RX-Vision 2017 concept Tokyo Motor Show </p>
               </div>
-            <div class="banner-container">
-              <p> 2019 Porsche Cayenne, 2018 Mercedes-Benz S-Class, Borgward Isabella concept </p>
             </div>
-        </td>
-        <td class="pol-col">
-          <div class="polaroid">
-            <a href="News3.html"><img src="img_News33.png" class= "image" style="width:100%"></a>
-              <a href="News3.html">
-              <div class= "middle"><a href="News3.html">
-                <div class="text"> READ</div></a>
-              </div>
-            <div class="banner-container">
-              <p>First production 2018 Dodge Challenger SRT Demon rolls off assembly line</p>
+          </td>
+          <td class="pol-col">
+            <div class="polaroid">
+              <a href="News2.html"><img src="img_News1.png" class= "image" style="width:100%"></a>
+              <a href="News2.html">
+                <div class= "middle"><a href="News2.html">
+                  <div class="text"> READ</div></a>
+                </div>
+                <div class="banner-container">
+                  <p> 2019 Porsche Cayenne, 2018 Mercedes-Benz S-Class, Borgward Isabella concept </p>
+                </div>
+              </td>
+              <td class="pol-col">
+                <div class="polaroid">
+                  <a href="News3.html"><img src="img_News33.png" class= "image" style="width:100%"></a>
+                  <a href="News3.html">
+                    <div class= "middle"><a href="News3.html">
+                      <div class="text"> READ</div></a>
+                    </div>
+                    <div class="banner-container">
+                      <p>First production 2018 Dodge Challenger SRT Demon rolls off assembly line</p>
+                    </div>
+
+                  </td>
+                </tr>
+              </table>
+            </center>
+
+            <center>
+              <button class="button">LOAD MORE</button>
+            </center>
+
+            <!-- MODELS -->
+            <div class="header-title-Models" id="models">
+              <img src="Models-Header.png" style="width:40%; float: left">
             </div>
+
 
         </td>
       </tr>

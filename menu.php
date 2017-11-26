@@ -19,8 +19,10 @@
       if(isset($_SESSION["user"])){
 
 
-        if($_SESSION["user"]){
+        if($_SESSION["role"] == 2){
           echo '<a href="admin.php">'.$_SESSION["user"].'</a>';
+        }else{
+          echo '<a href="user.php">'.$_SESSION["user"].'</a>';
         }
 
       }else{

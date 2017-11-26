@@ -1,7 +1,3 @@
-<?php
-  session_start();
- ?>
-
 <html>
 <head>
   <title> THE CAR: Sign Up </title>
@@ -9,24 +5,9 @@
   <link rel="stylesheet" href="model.css"/>
   <header>
 <!--MENU Bar-->
-      <div class= "container">
-        <nav class= "nav">
-          <ul>
-            <li><a href="index.php">HOME</a></li>
-            <li><a href="index.php">NEWS</a></li>
-            <li><a href="index.php">MODELS</a></li>
-            <li><a href="Booking.php">BOOKING</a></li>
-            <li><a href="index.php">CONTACT US</a></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-              <li><a href="login.php">LOG OUT
-              </a></li>
-
-          </ul>
-        </nav>
-      </div>
+      <?php
+      require_once('menu.php');
+      ?>
     </header>
   </head>
 
