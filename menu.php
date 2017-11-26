@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <div class= "container">
   <nav class= "nav">
     <ul>
