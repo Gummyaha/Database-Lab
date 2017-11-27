@@ -33,6 +33,7 @@ if(isset($_GET['user'])){
         <b><label>Customer ID:</label></b>
       </td>
       <td>
+      <form action="edit.php" method = "post">
         <input type="hidden" name = 'ID' value =<?php echo '"'.$row['customerID'].'"'; ?>>
         <input type="text" value =
           <?php echo '"'.$row['customerID'].'"'; ?>
@@ -40,8 +41,8 @@ if(isset($_GET['user'])){
       </td>
     </tr>
       <tr>
-        <form action="edit.php" method = "post">
-          <input type = "hidden" value = "customer">
+
+          <input type = "hidden" value = "customer" name = "page">
         <td style="width: 30%;">
           <b><label>First Name:</label></b>
         </td>
@@ -81,6 +82,17 @@ if(isset($_GET['user'])){
           <input type="text" value =
             <?php echo '"'.$row['email'].'"'; ?>
             placeholder="Enter Email" name="email" required>
+        </td>
+
+      </tr>
+      <tr>
+        <td style="width: 30%;">
+          <b><label>Disable:</label></b>
+        </td>
+        <td>
+          <input type="checkbox"
+            <?php if($row['disabled'] ==  1) echo 'checked'; ?>
+            name="disable">
         </td>
 
       </tr>

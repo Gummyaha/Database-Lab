@@ -32,8 +32,9 @@ require_once('menu.php');
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 18px;">First Name</th>
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 18px;">Last Name</th>
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 18px;">Username</th>
-
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Email</th>
+      <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Status</th>
+      <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Edit</th>
     </tr>
       <?php
 
@@ -47,7 +48,14 @@ require_once('menu.php');
             echo "<td>".$row['lName'] ."</td>";
             echo "<td>".$row['username'] ."</td>";
             echo "<td>".$row['email'] ."</td>";
-            echo "<td><a href = 'editUser.php?user=".$row['customerID']."'> Edit </a></td>";
+            echo "<td>";
+            if($row['disabled'] == 0){
+              echo "Enabled";
+            }else{
+              echo "Disabled";
+            }
+            echo "</td>";
+            echo "<td><a href = 'editUser.php?user=".$row['customerID']."'><button class = 'button' style= 'font-size:15; padding:5;'> Edit </button></a></td>";
             echo "</tr>";
 
           }
