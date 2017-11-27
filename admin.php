@@ -36,6 +36,20 @@
 
         </td>
       </tr>
+      <td>
+        <form method="post" action="addStaff.html" style = "border-style:hidden;">
+            <button class= "button "type="submit">Add Staffs</button>
+        </form>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <form method="post" action="staff-table.php" style = "border-style:hidden;">
+            <button class= "button "type="submit">View Staffs</button>
+        </form>
+
+      </td>
+    </tr>
       <tr>
         <td>
           <form method="post" action="addProduct.html" style = "border-style:hidden;">
