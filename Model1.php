@@ -9,7 +9,7 @@ require_once("connect.php");
 
 <head>
   <title> Models </title>
-  <link rel="stylesheet" href="main.css"/>
+  <!-- <link rel="stylesheet" href="main.css"/> -->
   <link rel="stylesheet" href="Booking.css"/>
   <header>
 <!--MENU Bar-->
@@ -47,7 +47,7 @@ require_once('menu.php');
               echo '<a class="letters" href = "?filter='.$let.'">'.$let.'</a>';
               echo ' ';
             }
-            echo '<a class="letters" href = ""> | ALL</a>';
+            echo '<a class="letters" href = "?"> | ALL</a>';
             ?>
 
           </center>
