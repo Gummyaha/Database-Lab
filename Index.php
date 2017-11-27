@@ -118,7 +118,7 @@ session_start();
       </td>
     </tr>
   </table>
-  <button class="button">SEE MORE</button>
+  <a href="Model1.php"><button class="button">SEE MORE</button></a>
 </center>
 
 
