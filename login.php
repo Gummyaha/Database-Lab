@@ -58,7 +58,7 @@
               }
 
               unset($_SESSION['logError']);
-            }else if($_GET['m'] == 'suc'){
+            }else if(isset($_GET['m']) and $_GET['m'] == 'suc'){
               echo 'Sign up Success!';
             }
             ?>

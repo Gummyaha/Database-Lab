@@ -15,7 +15,14 @@
         $manu = $_POST['manu'];
         $desc = $_POST['desc'];
         $q = "UPDATE product SET price = '$price', name = '$name',
-        manufacturer = '$manu', description = '$desc' WHERE productID = $id ";
+        manufacturer = '$manu', description = '$desc'";
+
+        if(isset($_POST['disable'])){
+          $disable = 1;
+        }else{
+          $disable =0;
+        }
+        $q=$q.", disabled = '".$disable."' WHERE productID = $id ";
 
         $results = $mysqli->query($q);
         if($results){
@@ -29,8 +36,13 @@
         $lname= $_POST['lname'];
         $uname= $_POST['user'];
         $email = $_POST['email'];
-        $q = "UPDATE customer SET fName='$fname', lName='$lname', username='$uname', email='$email'
-        WHERE customerID = '$id'";
+        $q = "UPDATE customer SET fName='$fname', lName='$lname', username='$uname', email='$email'";
+        if(isset($_POST['disable'])){
+          $disable = 1;
+        }else{
+          $disable =0;
+        }
+        $q=$q.", disabled = '".$disable."' WHERE customerID = '$id'";
         $results = $mysqli->query($q);
         if($results){
           header("Location: user-table.php");

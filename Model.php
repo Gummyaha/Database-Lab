@@ -1,5 +1,6 @@
 <?php
   session_start();
+  require_once('connect.php');
  ?>
 
 <html>
@@ -39,16 +40,12 @@
         <td class="detail"> xxx mm</td>
       </tr>
       <tr>
-        <td class="head">Displacement</td>
-        <td class="detail"> xxx cc</td>
-      </tr>
-      <tr>
         <td class="head">Max speed</td>
         <td class="detail"> xx km/h </td>
       </tr>
       <tr>
-        <td class="head">Acceleration</td>
-        <td class="detail"> xx-xx km/h </td>
+        <td class="head">Acceleration (0 to 60)</td>
+        <td class="detail"> xx-xx Seconds</td>
         <td class="right-hand" style="margin-left: 15%;">
           <button id="silver" class="colorbutton">  </button>
           <button id="black" class="colorbutton">  </button>

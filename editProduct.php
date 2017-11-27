@@ -82,7 +82,17 @@ if(isset($_GET['prod'])){
             </td>
 
           </tr>
-        </tr>
+          <tr>
+            <td style="width: 30%;">
+              <b><label>Disable:</label></b>
+            </td>
+            <td>
+              <input type="checkbox"
+                <?php if($row['disabled'] ==  1) echo 'checked'; ?>
+                name="disable">
+            </td>
+
+          </tr>
 
       </table>
       <input type = "submit">
