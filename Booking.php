@@ -32,7 +32,7 @@ if(!isset($_SESSION['user'])){
               echo '<a class="letters" href = "?filter='.$let.'">'.$let.'</a>';
               echo ' ';
             }
-            echo '<a class="letters" href = ""> | ALL</a>';
+            echo '<a class="letters" href = "?"> | ALL</a>';
             ?>
 
           </center>
