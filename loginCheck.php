@@ -28,7 +28,7 @@ if(isset($_POST["user"]) and isset($_POST['password'])){
     if($row['password'] == $_POST['password']){
       if($row['disabled'] == 0){
         $_SESSION['user'] = $row['fName'];
-        $_SESSION['ID'] = $row['staffID'];
+        $_SESSION['ID'] = $row['customerID'];
         $_SESSION['role'] = 0;
       }else{
           $_SESSION['logError'] = 'disabled';

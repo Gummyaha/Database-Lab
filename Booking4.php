@@ -40,7 +40,7 @@
       }
     $results = $mysqli->query($q);
     $row = $results -> fetch_array();
-    $insert = 'INSERT INTO `booking` (`customerID`, `branchID`, `approved`, `productID`, `date`) VALUES ("'.$_SESSION['user'].'", "'.$_POST['branch'].'", "0", "'.$_POST['model'].'", "'.$_POST['date'].'")';
+    $insert = 'INSERT INTO `booking` (`customerID`, `branchID`, `approved`, `productID`, `date`) VALUES ("'.$_SESSION['ID'].'", "'.$_POST['branch'].'", "0", "'.$_POST['model'].'", "'.$_POST['date'].'")';
     $mysqli->query($insert);
     ?>
     <h2>" <?php echo $row['prodName'] ?> "</h2>
