@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2017 at 12:46 PM
+-- Generation Time: Nov 27, 2017 at 06:56 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -44,7 +44,10 @@ CREATE TABLE `booking` (
 INSERT INTO `booking` (`bookingID`, `customerID`, `branchID`, `approved`, `productID`, `date`) VALUES
 (2, 1, 3, 2, 83, '2017-11-02'),
 (3, 2, 3, 1, 20, '2017-11-05'),
-(4, 1, 3, 2, 11, '2017-11-03');
+(4, 1, 3, 2, 11, '2017-11-03'),
+(5, 1, 1, 0, 53, '2017-12-01'),
+(6, 1, 3, 0, 10, '2017-12-02'),
+(7, 4, 1, 0, 6, '2017-11-30');
 
 -- --------------------------------------------------------
 
@@ -177,7 +180,9 @@ INSERT INTO `comments` (`commentID`, `productID`, `text`, `customerID`, `dateTim
 (3, 1, 'Hi', 1, '2017-11-27 00:00:00'),
 (4, 1, 'asdf', 1, '2017-11-27 00:00:00'),
 (5, 1, 'aaaa', 1, '2017-11-27 00:00:00'),
-(6, 1, 'aaaa', 1, '2017-11-27 18:10:43');
+(6, 1, 'aaaa', 1, '2017-11-27 18:10:43'),
+(7, 11, 'Hi', 0, '2017-11-27 23:17:32'),
+(8, 11, 'Hi', 4, '2017-11-27 23:19:10');
 
 -- --------------------------------------------------------
 
@@ -215,9 +220,10 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`customerID`, `fName`, `lName`, `username`, `email`, `joinDate`, `password`, `disabled`) VALUES
-(1, 'Wanich', 'Keatkajonjumroen', 'toowanich', 'asdflkasjdf@asdfjksldf.co', '0000-00-00 00:00:00', '1234', 0),
-(2, 'asdfds', 'asdf', 'asdf', 'asdfasdfSF', '0000-00-00 00:00:00', '12345', 0),
-(3, 'a', 'a', 'a', 'a', '0000-00-00 00:00:00', 'a', 0);
+(1, 'Wanich', 'Keatkajonjumroen', 'toowanich', 'asdflkasjdf@asdfjksldf.co', '0000-00-00 00:00:00', '0000', 0),
+(2, 'asdfds', 'asdf', 'asdf', 'asdfasdfSF', '0000-00-00 00:00:00', '0', 0),
+(3, 'a', 'a', 'a', 'a', '0000-00-00 00:00:00', 'a', 0),
+(4, 'definitely', 'not', '2T', 'ttt', '0000-00-00 00:00:00', '0', 0);
 
 -- --------------------------------------------------------
 
@@ -227,10 +233,23 @@ INSERT INTO `customer` (`customerID`, `fName`, `lName`, `username`, `email`, `jo
 
 CREATE TABLE `loginlog` (
   `logID` int(11) NOT NULL,
-  `username` int(11) DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL,
   `error` varchar(20) NOT NULL,
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `loginlog`
+--
+
+INSERT INTO `loginlog` (`logID`, `username`, `error`, `time`) VALUES
+(1, 'too', 'E', '2017-11-28 00:01:04'),
+(2, 'too', '', '2017-11-28 00:06:41'),
+(3, 'toowanich', 'wrong', '2017-11-28 00:07:44'),
+(4, 'too', '', '2017-11-28 00:07:50'),
+(7, 'too', '', '2017-11-28 00:10:27'),
+(8, 'gggggggggggg', 'notFound', '2017-11-28 00:11:34'),
+(9, 'Too', '', '2017-11-28 00:11:37');
 
 -- --------------------------------------------------------
 
@@ -466,6 +485,26 @@ INSERT INTO `product` (`productID`, `price`, `name`, `manufacturer`, `descriptio
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `role`
+--
+
+CREATE TABLE `role` (
+  `roleID` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `role`
+--
+
+INSERT INTO `role` (`roleID`, `name`) VALUES
+(0, 'Customer'),
+(1, 'Staff'),
+(2, 'Admin');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sales`
 --
 
@@ -473,8 +512,16 @@ CREATE TABLE `sales` (
   `salesID` int(11) NOT NULL,
   `productID` int(11) NOT NULL,
   `date` date NOT NULL,
-  `customerID` int(11) NOT NULL
+  `customerID` int(11) NOT NULL,
+  `branchID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sales`
+--
+
+INSERT INTO `sales` (`salesID`, `productID`, `date`, `customerID`, `branchID`) VALUES
+(2, 1, '2017-11-27', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -499,7 +546,10 @@ CREATE TABLE `staff` (
 --
 
 INSERT INTO `staff` (`staffID`, `branchID`, `fName`, `lName`, `username`, `email`, `type`, `password`, `disabled`) VALUES
-(1, 1, 'Too', 'Too', 'too', 'asdf', 2, '00000000', 0);
+(1, 1, 'Too', 'Too', 'too', 'asdf', 2, '0', 0),
+(3, 1, '1', '1', '1', '1', 1, '2', 0),
+(4, 1, 'asdf', 'g', 'g', 'g', 1, 'g', 0),
+(6, 2, 'tester', 'tester', 'tester', 'tester', 2, 't', 1);
 
 --
 -- Indexes for dumped tables
@@ -573,7 +623,7 @@ ALTER TABLE `staff`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `bookingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `bookingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `branch`
 --
@@ -588,7 +638,7 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `commentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `commentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `contact`
 --
@@ -598,12 +648,12 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `customerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `loginlog`
 --
 ALTER TABLE `loginlog`
-  MODIFY `logID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `logID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `product`
 --
@@ -613,12 +663,12 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `salesID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `salesID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `staffID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+  MODIFY `staffID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
