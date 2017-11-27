@@ -1,33 +1,20 @@
+<?php session_start(); ?>
 <html>
 <link rel="stylesheet" href="main.css"/>
 <link rel="stylesheet" href="model.css"/>
+<?php
+require_once("connect.php");
+ ?>
   <head>
     <title> ADD PRODUCT </title>
   </head>
 
   <body>
 
-  <header>
-<!--MENU Bar-->
-      <div class= "container">
-        <nav class= "nav">
-          <ul>
-            <li><a href="index.php#home">HOME</a></li>
-            <li><a href="index.php#news">NEWS</a></li>
-            <li><a href="index.php#models">MODELS</a></li>
-            <li><a href="Booking.php">BOOKING</a></li>
-            <li><a href="index.php#contact">NEWSLETTER</a></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-              <li><a href="login.php">LOG OUT
-              </a></li>
-
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <header>
+  <?php require_once('menu.php'); ?>
+      </header>
+      
     <center>
       <!-- <label style = "font-size: 30;">ADD PRODUCT<label> -->
       <img style="margin-top: 2%;" src="addproduct.png">

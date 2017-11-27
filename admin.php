@@ -23,7 +23,7 @@
     <table style="margin-left 50%;">
       <tr>
         <td>
-          <form method="post" action="addUser.html" style = "border-style:hidden;">
+          <form method="post" action="addUser.php" style = "border-style:hidden;">
               <button class= "button "type="submit">Add Users</button>
           </form>
         </td>
@@ -37,7 +37,7 @@
         </td>
       </tr>
       <td>
-        <form method="post" action="addStaff.html" style = "border-style:hidden;">
+        <form method="post" action="addStaff.php" style = "border-style:hidden;">
             <button class= "button "type="submit">Add Staffs</button>
         </form>
       </td>
@@ -52,7 +52,7 @@
     </tr>
       <tr>
         <td>
-          <form method="post" action="addProduct.html" style = "border-style:hidden;">
+          <form method="post" action="addProduct.php" style = "border-style:hidden;">
               <button class= "button "type="submit">Add Product</button>
           </form>
         </td>
