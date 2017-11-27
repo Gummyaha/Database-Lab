@@ -80,8 +80,15 @@
       </tr>
       <tr>
         <td>
-          <form method="post" action="booking-table.php" style = "border-style:hidden;">
-              <button class= "button "type="submit">View Booking</button>
+          <form method="post" action="login-log.php" style = "border-style:hidden;">
+              <button class= "button "type="submit">View Login Log</button>
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <form method="post" action="upload-img.php" style = "border-style:hidden;">
+              <button class= "button "type="submit">Upload Images</button>
           </form>
         </td>
       </tr>

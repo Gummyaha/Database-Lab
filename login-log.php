@@ -17,23 +17,29 @@
   <center>
     <table class="usertable" style="border-collapse: collapse; width: 60%;">
       <tr style = "background-color:#f2f2f2;" >
-
-        <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">LOGIN ID</th>
+        <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Time</th>
         <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Username</th>
         <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Error</th>
-        <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Time</th>
+
 
       </tr>
         <?php
-        $q = "select * from loginlog";
+        $q = "SELECT * FROM loginlog ORDER BY time DESC";
         $result = $mysqli->query($q);
         if ($result) {
             while($row = $result->fetch_array()){
               echo "<tr>";
-              echo "<td>".$row['logID'] ."</td>";
-              echo "<td>".$row['username'] ."</td>";
-              echo "<td>".$row['error'] ."</td>";
               echo "<td>".$row['time'] ."</td>";
+              echo "<td>".$row['username'] ."</td>";
+              echo "<td>";
+              if($row['error']=='disabled'){
+                echo 'Account diabled';
+              }else if($row['error']=='wrong'){
+                echo 'Incorrect Password';
+              }else if($row['error']=='notFound'){
+                echo 'Account not found';
+              }
+              echo "</td>";
               echo "</tr>";
 
 
