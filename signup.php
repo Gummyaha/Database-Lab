@@ -18,8 +18,10 @@
 <img style="float: left; width: 28.5%; height: auto;" src="signup.png">
 
 <table style="margin-left: 50%; margin-top: 15%;">
+  <form action='add.php' method='post'>
+    <input type = "hidden" name = "page"  value = "signup">
   <tr>
-      <input type = "hidden" value = "customer">
+
     <td style="width: 30%;">
       <b><label style="margin-left: 0%;" >First Name:</label></b>
     </td>
@@ -54,11 +56,19 @@
       <input type="text" placeholder="Enter Email" name="email" required>
     </td>
   </tr>
+  <tr>
+    <td style="width: 30%;">
+      <b><label>Password:</label></b>
+    </td>
+    <td>
+      <input type="password" placeholder="Enter Password" name="pass" required>
+    </td>
+  </tr>
  </table>
 
 <br>
   <input class="button" style="margin-left: 30%" type = "submit"><br>
-
+</form>
 
 
 </body>
