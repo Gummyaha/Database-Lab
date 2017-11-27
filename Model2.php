@@ -42,7 +42,7 @@ if(isset($_POST['select'])){
     while($row = $results->fetch_array()){
       echo '<br>';
       echo '<center>';
-      echo '<a href="Model.php"> Model XXX</a>';
+      echo '<a href="Model.php?model='.$row['productID'].'">'.$row['name'].'</a>';
       echo '<br>';
       echo '</center>';
 

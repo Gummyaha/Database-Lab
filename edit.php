@@ -36,7 +36,7 @@
         $lname= $_POST['lname'];
         $uname= $_POST['user'];
         $email = $_POST['email'];
-        $q = "UPDATE customer SET fName='$fname', lName='$lname', username='$uname', email='$email'";
+        $q = "UPDATE customer SET fName='$fname', lName='$lname', username='$uname', email='$email', password = '".$_POST['password']."'";
         if(isset($_POST['disable'])){
           $disable = 1;
         }else{
@@ -47,7 +47,26 @@
         if($results){
           header("Location: user-table.php");
         }else{
-          echo "Failure to add customer";
+          echo "Failure to edit customer";
+        }
+    }elseif($_POST['page']=='staff'){
+        $id = $_POST['ID'];
+        $fname = $_POST['fname'];
+        $lname= $_POST['lname'];
+        $uname= $_POST['user'];
+        $email = $_POST['email'];
+        $q = "UPDATE staff SET fName='$fname', lName='$lname', username='$uname', email='$email',type = '".$_POST['role']."', password = '".$_POST['password']."'";
+        if(isset($_POST['disable'])){
+          $disable = 1;
+        }else{
+          $disable =0;
+        }
+        $q=$q.", disabled = '".$disable."' WHERE staffID = '$id'";
+        $results = $mysqli->query($q);
+        if($results){
+          header("Location: staff-table.php");
+        }else{
+          echo "Failure to edit customer";
         }
     }
   }else{

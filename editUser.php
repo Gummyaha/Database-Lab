@@ -26,7 +26,7 @@ if(isset($_GET['user'])){
       ?>
     </header>
     <center>
-      <label style = "font-size: 30;">ADD USER<label>
+      <label style = "font-size: 30;">EDIT USER<label>
     <table style = "border-style: groove">
     <tr>
       <td style="width: 30%;">
@@ -37,7 +37,7 @@ if(isset($_GET['user'])){
         <input type="hidden" name = 'ID' value =<?php echo '"'.$row['customerID'].'"'; ?>>
         <input type="text" value =
           <?php echo '"'.$row['customerID'].'"'; ?>
-        placeholder="Enter First Name" name="IDhehe" required disabled>
+        placeholder="Enter ID" name="IDhehe" required disabled>
       </td>
     </tr>
       <tr>
@@ -82,6 +82,17 @@ if(isset($_GET['user'])){
           <input type="text" value =
             <?php echo '"'.$row['email'].'"'; ?>
             placeholder="Enter Email" name="email" required>
+        </td>
+
+      </tr>
+      <tr>
+        <td style="width: 30%;">
+          <b><label>Password:</label></b>
+        </td>
+        <td>
+          <input type="text" value =
+            <?php echo '"'.$row['password'].'"'; ?>
+            placeholder="Enter Password" name="password" required>
         </td>
 
       </tr>

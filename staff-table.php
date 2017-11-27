@@ -35,6 +35,9 @@ require_once('menu.php');
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 18px;">Username</th>
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 18px;">Email</th>
       <th style="padding: 8px; text-align: left; border-bottom: 1p solid #ddd; font-size: 18px;">Type</th>
+      <th style="padding: 8px; text-align: left; border-bottom: 1p solid #ddd; font-size: 18px;">Status</th>
+      <th style="padding: 8px; text-align: left; border-bottom: 1p solid #ddd; font-size: 18px;">Edit</th>
+
     </tr>
       <?php
 
@@ -50,7 +53,14 @@ require_once('menu.php');
             echo "<td>".$row['username'] ."</td>";
             echo "<td>".$row['email'] ."</td>";
             echo "<td>".$row['type'] ."</td>";
-            echo "<td><a href = 'editUser.php?user=".$row['staffID']."'> Edit </a></td>";
+            echo "<td>";
+            if($row['disabled'] == 0){
+              echo "Enabled";
+            }else{
+              echo "Disabled";
+            }
+            echo "</td>";
+            echo "<td><a href = 'editStaff.php?user=".$row['staffID']."'> Edit </a></td>";
             echo "</tr>";
 
           }
