@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2017 at 12:14 PM
+-- Generation Time: Nov 27, 2017 at 12:46 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -466,6 +466,19 @@ INSERT INTO `product` (`productID`, `price`, `name`, `manufacturer`, `descriptio
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `sales`
+--
+
+CREATE TABLE `sales` (
+  `salesID` int(11) NOT NULL,
+  `productID` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `customerID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `staff`
 --
 
@@ -541,6 +554,12 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`productID`);
 
 --
+-- Indexes for table `sales`
+--
+ALTER TABLE `sales`
+  ADD PRIMARY KEY (`salesID`);
+
+--
 -- Indexes for table `staff`
 --
 ALTER TABLE `staff`
@@ -590,6 +609,11 @@ ALTER TABLE `loginlog`
 --
 ALTER TABLE `product`
   MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205;
+--
+-- AUTO_INCREMENT for table `sales`
+--
+ALTER TABLE `sales`
+  MODIFY `salesID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `staff`
 --

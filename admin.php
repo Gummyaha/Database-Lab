@@ -38,14 +38,15 @@
       </tr>
       <td>
         <form method="post" action="addStaff.php" style = "border-style:hidden;">
-            <button class= "button "type="submit">Add Staffs</button>
+            <button class= "button "type="submit">Add Staff</button>
+
         </form>
       </td>
     </tr>
     <tr>
       <td>
         <form method="post" action="staff-table.php" style = "border-style:hidden;">
-            <button class= "button "type="submit">View Staffs</button>
+            <button class= "button "type="submit">View Staff</button>
         </form>
 
       </td>
@@ -61,6 +62,20 @@
         <td>
           <form method="post" action="product-table.php" style = "border-style:hidden;">
               <button class= "button "type="submit">View Product</button>
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <form method="post" action="addSales.php" style = "border-style:hidden;">
+              <button class= "button "type="submit">Add Sales</button>
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <form method="post" action="sales-table.php" style = "border-style:hidden;">
+              <button class= "button "type="submit">View Sales</button>
           </form>
         </td>
       </tr>

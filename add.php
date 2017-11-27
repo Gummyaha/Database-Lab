@@ -35,9 +35,17 @@
         }else{
           echo "Failure to add customer";
         }
-    }
+    }elseif($_POST['page']=='sales'){
+        $q = "INSERT INTO sales (productID, customerID, date, branchID)
+        VALUES ('".$_POST['product']."','".$_POST['customer']."','".$_POST['date']."','".$_POST['branch']."')";
+        $results = $mysqli->query($q);
+        if($results){
+            header("Location: sales-table.php");
+        }else{
+          echo "Failure to add sale";
+        }
   }else{
     header("Location: Index.php");
   }
-
+}
 ?>
