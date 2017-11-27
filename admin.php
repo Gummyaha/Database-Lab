@@ -37,7 +37,7 @@
         </td>
       </tr>
       <td>
-        <form method="post" action="addStaff.html" style = "border-style:hidden;">
+        <form method="post" action="addStaff.php" style = "border-style:hidden;">
             <button class= "button "type="submit">Add Staff</button>
 
         </form>
