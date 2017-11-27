@@ -6,7 +6,7 @@
     <ul>
       <li><a href="index.php">HOME</a></li>
       <li><a href="index.php#news">NEWS</a></li>
-      <li><a href="index.php#models">MODELS</a></li>
+      <li><a href="Model1.php">MODELS</a></li>
       <li><a href="Booking.php">BOOKING</a></li>
       <li><a href="index.php#contact">NEWSLETTER</a></li>
       <li></li>

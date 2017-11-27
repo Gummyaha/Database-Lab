@@ -22,13 +22,11 @@
 
     <table style="margin-left 50%;">
       <tr>
-        <td>
+        <td style = "width:50%">
           <form method="post" action="addUser.php" style = "border-style:hidden;">
               <button class= "button "type="submit">Add Users</button>
           </form>
         </td>
-      </tr>
-      <tr>
         <td>
           <form method="post" action="user-table.php" style = "border-style:hidden;">
               <button class= "button "type="submit">View Users</button>
@@ -42,8 +40,6 @@
 
         </form>
       </td>
-    </tr>
-    <tr>
       <td>
         <form method="post" action="staff-table.php" style = "border-style:hidden;">
             <button class= "button "type="submit">View Staff</button>
@@ -57,8 +53,6 @@
               <button class= "button "type="submit">Add Product</button>
           </form>
         </td>
-      </tr>
-      <tr>
         <td>
           <form method="post" action="product-table.php" style = "border-style:hidden;">
               <button class= "button "type="submit">View Product</button>
@@ -71,11 +65,16 @@
               <button class= "button "type="submit">Add Sales</button>
           </form>
         </td>
-      </tr>
-      <tr>
         <td>
           <form method="post" action="sales-table.php" style = "border-style:hidden;">
               <button class= "button "type="submit">View Sales</button>
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <form method="post" action="booking-table.php" style = "border-style:hidden;">
+              <button class= "button "type="submit">View Booking</button>
           </form>
         </td>
       </tr>
