@@ -26,7 +26,7 @@ require_once("connect.php");
     <table>
       <tr>
         <form action="add.php" method = "post">
-          <input type = "hidden" name = "page"  value = "customer">
+          <input type = "hidden" name = "page"  value = "staff">
         <td style="width: 30%;">
           <b><label>First Name:</label></b>
         </td>
@@ -67,6 +67,39 @@ require_once("connect.php");
         </td>
         <td>
           <input type="text" placeholder="Enter Password" name="pass" required>
+        </td>
+
+      </tr>
+      <tr>
+        <td style="width: 30%;">
+          <b><label>Role:</label></b>
+        </td>
+        <td>
+          <select name='role' required>
+            <?php
+            $q = 'SELECT * FROM role limit 1,20';
+            $result = $mysqli->query($q);
+            while($row = $result->fetch_array()){
+              echo '<option value="'.$row['roleID'].'">'.$row['name'].'</option>';
+            }
+            ?>
+        </td>
+
+      </tr>
+      <tr>
+        <td style="width: 30%;">
+          <b><label>Branch:</label></b>
+        </td>
+        <td>
+          <select name='branch' required>
+            <?php
+            $q = 'SELECT * FROM branch';
+            $result = $mysqli->query($q);
+            while($row = $result->fetch_array()){
+              echo '<option value="'.$row['branchID'].'">'.$row['name'].'</option>';
+            }
+            ?>
+          </select>
         </td>
 
       </tr>

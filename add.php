@@ -44,8 +44,24 @@
         }else{
           echo "Failure to add sale";
         }
-  }else{
-    header("Location: Index.php");
-  }
+  }elseif($_POST['page']=='staff'){
+      $fname = $_POST['fname'];
+      $lname= $_POST['lname'];
+      $uname= $_POST['user'];
+      $email = $_POST['email'];
+      $pass = $_POST['pass'];
+      $q = "INSERT INTO staff (fName, lName, username, email, password,type,branchID)
+      VALUES ('".$fname."','".$lname."','".$uname."','".$email."','".$pass."','".$_POST['role']."','".$_POST['branch']."')";
+      $results = $mysqli->query($q);
+      if($results){
+          header("Location: staff-table.php");
+
+
+      }else{
+        echo "Failure to add Staff";
+      }
+    }else{
+        header("Location: Index.php");
+      }
 }
 ?>
