@@ -57,8 +57,6 @@ if(!isset($_SESSION['user'])){
           echo '<label for="'.$id.'"><img class="LogoBrand" src="'.$img.'" alt="'.$name.'">';
           echo '<center><br><br>';
           echo '<input type="radio" class ="radio"  name="select" value="'.$id.'" id = "'.$id.'"></label></center>';
-
-
           echo "</td>";
           $count = $count +1;
           if ($count >= 7){
