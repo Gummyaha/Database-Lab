@@ -10,7 +10,7 @@ if(isset($_SESSION['role'])){
 }?>
 <html>
   <head>
-    <title> Login </title>
+    <title> Login Log</title>
     <link rel="stylesheet" href="main.css"/>
   </head>
 

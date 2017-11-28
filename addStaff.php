@@ -15,7 +15,7 @@ if(isset($_SESSION['role'])){
 require_once("connect.php");
  ?>
   <head>
-    <title> ADD STAFF </title>
+    <title> Add Staff </title>
   </head>
 
   <body>

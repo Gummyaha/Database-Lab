@@ -23,7 +23,7 @@ if(isset($_GET['user'])){
 <link rel="stylesheet" href="main.css"/>
 <link rel="stylesheet" href="model.css"/>
   <head>
-    <title> EDIT USER </title>
+    <title> Edit User </title>
   </head>
 
   <body>

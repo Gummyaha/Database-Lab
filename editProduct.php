@@ -23,7 +23,7 @@ if(isset($_GET['prod'])){
 <link rel="stylesheet" href="main.css"/>
 <link rel="stylesheet" href="model.css"/>
 <head>
-  <title> EDIT PRODUCT </title>
+  <title> Edit Product </title>
 </head>
 
 <body>

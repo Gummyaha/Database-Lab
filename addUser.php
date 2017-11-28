@@ -13,7 +13,7 @@ if(isset($_SESSION['role'])){
 require_once("connect.php");
  ?>
   <head>
-    <title> ADD USER </title>
+    <title> Add User </title>
   </head>
 
   <body>

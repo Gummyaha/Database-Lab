@@ -10,7 +10,7 @@ if(isset($_SESSION['role'])){
 <link rel="stylesheet" href="main.css"/>
 <link rel="stylesheet" href="model.css"/>
   <head>
-    <title> ADD PRODUCT </title>
+    <title> Add Sales </title>
   </head>
 
   <body>
