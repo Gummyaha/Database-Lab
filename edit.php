@@ -15,7 +15,9 @@
         $manu = $_POST['manu'];
         $desc = $_POST['desc'];
         $q = "UPDATE product SET price = '$price', name = '$name',
-        manufacturer = '$manu', description = '$desc'";
+        manufacturer = '$manu', description = '$desc',
+        length = '".$_POST['length']."', width = '".$_POST['width']."', height = '".$_POST['height']."',
+        maxSpeed = '".$_POST['max']."', acceleration = '".$_POST['acc']."' ";
 
         if(isset($_POST['disable'])){
           $disable = 1;

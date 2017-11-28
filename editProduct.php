@@ -84,6 +84,56 @@ if(isset($_GET['prod'])){
           </tr>
           <tr>
             <td style="width: 30%;">
+              <b><label>Length:</label></b>
+            </td>
+            <td>
+              <input type="text" placeholder="Enter Length" value =
+              <?php echo '"'.$row['length'].'"'; ?> name="length" required>
+            </td>
+
+          </tr>
+          <tr>
+            <td style="width: 30%;">
+              <b><label>Width:</label></b>
+            </td>
+            <td>
+              <input type="text" placeholder="Enter Length" value =
+              <?php echo '"'.$row['width'].'"'; ?> name="width" required>
+            </td>
+
+          </tr>
+          <tr>
+            <td style="width: 30%;">
+              <b><label>Height:</label></b>
+            </td>
+            <td>
+              <input type="text" placeholder="Enter Length" value =
+              <?php echo '"'.$row['height'].'"'; ?> name="height" required>
+            </td>
+
+          </tr>
+          <tr>
+            <td style="width: 30%;">
+              <b><label>Acceleration:</label></b>
+            </td>
+            <td>
+              <input type="text" placeholder="Enter Length" value =
+              <?php echo '"'.$row['acceleration'].'"'; ?> name="acc" required>
+            </td>
+
+          </tr>
+          <tr>
+            <td style="width: 30%;">
+              <b><label>Max Speed:</label></b>
+            </td>
+            <td>
+              <input type="text" placeholder="Enter Length" value =
+              <?php echo '"'.$row['maxSpeed'].'"'; ?> name="max" required>
+            </td>
+
+          </tr>
+          <tr>
+            <td style="width: 30%;">
               <b><label>Description:</label></b>
             </td>
             <td>

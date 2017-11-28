@@ -7,8 +7,10 @@
         $price= $_POST['price'];
         $manu = $_POST['manu'];
         $desc = $_POST['desc'];
-        $q = "INSERT INTO product (price, name, manufacturer, description)
-        VALUES ('".$price."','".$name."','".$manu."','".$desc."')";
+        $q = "INSERT INTO product (price, name, manufacturer, description,
+        length,width,height,maxSpeed,acceleration)
+        VALUES ('".$price."','".$name."','".$manu."','".$desc."','".
+        $_POST['length']."','".$_POST['width']."','".$_POST['height']."','".$_POST['max']."','".$_POST['acc']."')";
         $results = $mysqli->query($q);
         if($results){
           header("Location: product-table.php");
@@ -61,6 +63,6 @@
       }
     }else{
         header("Location: Index.php");
-      }
+    }
 }
 ?>

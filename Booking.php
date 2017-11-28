@@ -24,15 +24,15 @@ if(!isset($_SESSION['user'])){
 
     <center>
       <table>
-          <td class = "letter-header" colspan = 7>
+          <td class = "letter-header" colspan = 7 id='let'>
             <center>
             <?php
             $letters = range('A', 'Z');
             foreach($letters as $let){
-              echo '<a class="letters" href = "?filter='.$let.'">'.$let.'</a>';
+              echo '<a class="letters" href = "?filter='.$let.'#let">'.$let.'</a>';
               echo ' ';
             }
-            echo '<a class="letters" href = "?"> | ALL</a>';
+            echo '<a class="letters" href = "?#let"> | ALL</a>';
             ?>
 
           </center>

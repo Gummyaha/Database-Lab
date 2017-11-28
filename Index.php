@@ -155,15 +155,18 @@
   <br>
   <i class="fa fa-map-marker"></i>Bangkok, Thailand<br><br>
   <i class="fa fa-phone"></i>Phone: 080 000 0000<br><br>
-  <form>
+  <form action = 'newsletter.php' method='post'>
     <label for="Email">Email</label><br>
-    <input type="text" id="Email" name="Email" placeholder="Email"><br>
-  </form>
-
+    <input type="text" id="Email" name="email" placeholder="Email"><br>
 <br>
   <button class="button-black" type="submit">Subscribe</button>
+  <?php
+    if(isset($_GET['m']) and $_GET['m'] == 'sus'){
+      echo  'Successfuly Suscribed';
+    }
+  ?>
 <br>
-
+  </form>
 <img src="footer.png">
   </body>
 </html>

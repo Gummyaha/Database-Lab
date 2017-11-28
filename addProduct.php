@@ -43,7 +43,15 @@ require_once("connect.php");
           <b><label>Manufacturer:</label></b>
         </td>
         <td>
-          <input type="text" placeholder="Enter Manufacturer" name="manu" required>
+          <select name='manu' required>
+            <?php
+            $q = 'SELECT * from brands';
+            $result = $mysqli->query($q);
+            while($row = $result->fetch_array()){
+              echo '<option value="'.$row['brandID'].'">'.$row['brandName'].'</option>';
+            }
+            ?>
+          </select>
         </td>
 
       </tr>
@@ -59,10 +67,55 @@ require_once("connect.php");
       </tr>
       <tr>
         <td style="width: 30%;">
+          <b><label>Length:</label></b>
+        </td>
+        <td>
+          <input type="text" placeholder="Enter Length" name="length" required>
+        </td>
+
+      </tr>
+      <tr>
+        <td style="width: 30%;">
+          <b><label>Width:</label></b>
+        </td>
+        <td>
+          <input type="text" placeholder="Enter Length" name="width" required>
+        </td>
+
+      </tr>
+      <tr>
+        <td style="width: 30%;">
+          <b><label>Height:</label></b>
+        </td>
+        <td>
+          <input type="text" placeholder="Enter Length" name="height" required>
+        </td>
+
+      </tr>
+      <tr>
+        <td style="width: 30%;">
+          <b><label>Acceleration:</label></b>
+        </td>
+        <td>
+          <input type="text" placeholder="Enter Length" name="acc" required>
+        </td>
+
+      </tr>
+      <tr>
+        <td style="width: 30%;">
+          <b><label>Max Speed:</label></b>
+        </td>
+        <td>
+          <input type="text" placeholder="Enter Length" name="max" required>
+        </td>
+
+      </tr>
+      <tr>
+        <td style="width: 30%;">
           <b><label>Description:</label></b>
         </td>
         <td>
-          <textarea rows="5" cols="70" name = 'desc' placeholer = "Enter Description"></textarea>
+          <textarea rows="5" cols="70" name = 'desc' placeholer = "Enter Description" required></textarea>
         </td>
 
       </tr>

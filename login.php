@@ -50,7 +50,7 @@
             }
             if(isset($_SESSION['logError'])){
               if($_SESSION['logError']=='disabled'){
-                echo 'Account is diabled, please contact an Administrator';
+                echo 'Account is disabled, please contact an Administrator';
               }else if($_SESSION['logError']=='wrong'){
                 echo 'Password is incorrect';
               }else if($_SESSION['logError']=='notFound'){
