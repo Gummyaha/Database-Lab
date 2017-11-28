@@ -132,5 +132,30 @@ require_once('menu.php');
 
     </table>
     <img style="margin: 0% 0% 0% 2%;" src="repaired.png"><br>
+    <table>
+      <th >Date</th>
+      <th >Customer Name</th>
+      <th >Car Name</th>
+      <th >Location</th>
+      <th >Price</th>
+      <th >Details</th>
+    <?php
+    $q ='SELECT repairID, fName,lName,branch.name as branchName, product.name as prodName, repairs.date,repairs.price,repairs.detail
+    from repairs,customer,branch,product
+    WHERE customer.customerID = repairs.customerID
+    AND repairs.branchID = branch.branchID AND product.productID = repairs.productID and repairs.customerID = '.$_SESSION['ID'];
+    $result = $mysqli->query($q);
+    while($row = $result->fetch_array()){
+      echo '<tr>';
+      echo '<td>'.$row['date'].'</td>';
+      echo '<td>'.$row['fName'].' '.$row['lName'].'</td>';
+      echo '<td>'.$row['prodName'].'</td>';
+      echo '<td>'.$row['branchName'].'</td>';
+      echo '<td>'.$row['price'].'</td>';
+      echo '<td>'.$row['detail'].'</td>';
+      echo '</tr>';
+    }
+     ?>
+   </table>
     </body>
 </html>

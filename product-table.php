@@ -25,7 +25,7 @@ require_once("connect.php");
 <img style="margin: 2% 0% 5% 0%;" src="produc table.png">
 
 <center>
-  <table class="usertable user-table" style="border-collapse: collapse; width: 60%;">
+  <table class="usertable user-table" style="border-collapse: collapse; width: 90%;">
     <tr style = "background-color:#f2f2f2;" >
 
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Product ID</th>

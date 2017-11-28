@@ -61,7 +61,16 @@
       }else{
         echo "Failure to add Staff";
       }
-    }else{
+    }elseif($_POST['page']=='repair'){
+        $q = "INSERT INTO repairs (productID, customerID, branchID,price,detail)
+        VALUES ('".$_POST['product']."','".$_POST['customer']."','".$_POST['branch']."','".$_POST['price']."','".$_POST['details']."')";
+        $results = $mysqli->query($q);
+        if($results){
+            header("Location: repairs-table.php");
+        }else{
+          echo "Failure to add Repair";
+        }
+        }else{
         header("Location: Index.php");
     }
 }

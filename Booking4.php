@@ -33,7 +33,7 @@
     <br>
     <?php
       if(isset($_POST['model']) and isset($_POST['branch']) and isset($_POST['date'])){
-        $q = 'SELECT price, product.name as prodName,brandName,description, location, branch.name as branchName FROM product,brands,branch where brandID = manufacturer AND productID = '.$_POST['model'].' AND branchID = '.$_POST['branch'];
+        $q = 'SELECT price, product.name as prodName,brandName,description, location, branch.name as branchName, productID FROM product,brands,branch where brandID = manufacturer AND productID = '.$_POST['model'].' AND branchID = '.$_POST['branch'];
         //echo $q;
       }else{
         header('Location:Booking.php');
@@ -45,7 +45,16 @@
     ?>
     <h2>" <?php echo $row['prodName'] ?> "</h2>
     <br>
-    <img style="width: 65%; height: auto;" src="maybach.png">
+    <?php
+    if(isset($row)){
+
+     $image = 'car-img/'.$row['productID'].'_1.jpg';
+     if(!file_exists($image)){
+       $image = 'car-img/default.jpg';
+     }
+   }
+   ?>
+    <img style="width: 65%; height: auto;" src="<?php  echo $image?>">
     <br>
     <br>
     <table>

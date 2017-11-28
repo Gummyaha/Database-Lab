@@ -61,6 +61,20 @@ if(isset($_SESSION['role'])){
       </tr>
       <tr>
         <td>
+          <form method="post" action="addRepairs.php" style = "border-style:hidden;">
+              <button class= "button "type="submit">Add Repairs</button>
+          </form>
+        </td>
+        <tr>
+        </tr>
+        <td>
+          <form method="post" action="repairs-table.php" style = "border-style:hidden;">
+              <button class= "button "type="submit">View Repairs</button>
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td>
           <form method="post" action="product-table.php" style = "border-style:hidden;">
               <button class= "button "type="submit">View Product</button>
           </form>

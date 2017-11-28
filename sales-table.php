@@ -42,7 +42,7 @@ require_once("connect.php");
         <td>
           <form action=sales-table.php method='get'>
           Filters:<br>
-          <input type="date" name="date">
+          <!-- <input type="date" name="date"> -->
         </td>
         <td>
           <!-- customer name -->

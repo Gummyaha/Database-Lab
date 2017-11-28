@@ -85,7 +85,7 @@
         <div class="polaroid">
           <div class="image">
             <div class="model-img">
-              <a href="Model.php"><img src="Model-test111.png" style="width: 100%;"></a>
+              <a href="Model.php?model=1"><img src="Model-test111.png" style="width: 100%;"></a>
             </div>
           </div>
         </div>
@@ -97,7 +97,7 @@
         <div class="polaroid">
           <div class="image">
             <div class="model-img">
-              <a href="Model.php"><img src="Model-test22.png" style="width: 100%;"></a>
+              <a href="Model.php?model=2"><img src="Model-test22.png" style="width: 100%;"></a>
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@
         <div class="polaroid">
           <div class="image">
             <div class="model-img">
-              <a href="Model.php"><img src="Model-test33.png" style="width: 100%;"></a>
+              <a href="Model.php?model=3"><img src="Model-test33.png" style="width: 100%;"></a>
             </div>
           </div>
         </div>
@@ -162,7 +162,7 @@
   <button class="button-black" type="submit">Subscribe</button>
   <?php
     if(isset($_GET['m']) and $_GET['m'] == 'sus'){
-      echo  'Successfuly Suscribed';
+      echo  'Successfully Suscribed';
     }
   ?>
 <br>
