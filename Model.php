@@ -136,7 +136,16 @@ if(isset($_GET['model'])){
     <br>
 
     <center>
-      <button class="button">Test Drive</button>
+      <form action='Booking3.php' method='post'>
+      <?php
+      if(isset($_SESSION['user'])){
+        echo'<input type=hidden name=model value= '.$_GET['model'].'>';
+        echo '<input type="submit" class="button" value = "Test Drive">';
+      }
+
+
+      ?>
+    </form>
       <br>
       <br>
       <br>
