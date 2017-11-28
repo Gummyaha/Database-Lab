@@ -1,5 +1,5 @@
-<?php require_once('connect.php');
-      session_start();
+<?php session_start();
+      require_once('connect.php');
       if(!isset($_SESSION['user'])){
         header('Location: login.php');
       }elseif($_SESSION['role'] == 0){

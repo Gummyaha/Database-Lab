@@ -1,7 +1,16 @@
-<?php session_start(); ?>
+<?php session_start();
+if(isset($_SESSION['role'])){
+  if($_SESSION['role'] == 0){
+    header('Location: user.php');
+  }elseif($_SESSION['role'] == 1){
+    header('Location: staff.php');
+  }
+}else{
+  header('Location: login.php');
+}?>
 <html>
   <head>
-    <title> Login </title>
+    <title> Login Log</title>
     <link rel="stylesheet" href="main.css"/>
   </head>
 

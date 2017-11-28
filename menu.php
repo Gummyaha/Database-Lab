@@ -21,6 +21,8 @@
 
         if($_SESSION["role"] == 2){
           echo '<a href="admin.php">'.$_SESSION["user"].'</a>';
+        }elseif($_SESSION["role"] == 1){
+          echo '<a href="staff.php">'.$_SESSION["user"].'</a>';
         }else{
           echo '<a href="user.php">'.$_SESSION["user"].'</a>';
         }

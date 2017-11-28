@@ -1,5 +1,13 @@
-<html>
-<?php
+<?php session_start();
+if(isset($_SESSION['role'])){
+  if($_SESSION['role'] == 0){
+    header('Location: user.php');
+  }elseif($_SESSION['role'] == 1){
+    header('Location: staff.php');
+  }
+}else{
+  header('Location: login.php');
+}
 require_once("connect.php");
 if(isset($_GET['prod'])){
   $prodID = $_GET['prod'];
@@ -11,10 +19,11 @@ if(isset($_GET['prod'])){
 }
 
 ?>
+<html>
 <link rel="stylesheet" href="main.css"/>
 <link rel="stylesheet" href="model.css"/>
 <head>
-  <title> EDIT PRODUCT </title>
+  <title> Edit Product </title>
 </head>
 
 <body>
@@ -70,6 +79,56 @@ if(isset($_GET['prod'])){
               <?php echo '"'.$row['price'].'"'; ?>
               placeholder="Enter Price" name="price" required>
 
+            </td>
+
+          </tr>
+          <tr>
+            <td style="width: 30%;">
+              <b><label>Length:</label></b>
+            </td>
+            <td>
+              <input type="text" placeholder="Enter Length" value =
+              <?php echo '"'.$row['length'].'"'; ?> name="length" required>
+            </td>
+
+          </tr>
+          <tr>
+            <td style="width: 30%;">
+              <b><label>Width:</label></b>
+            </td>
+            <td>
+              <input type="text" placeholder="Enter Length" value =
+              <?php echo '"'.$row['width'].'"'; ?> name="width" required>
+            </td>
+
+          </tr>
+          <tr>
+            <td style="width: 30%;">
+              <b><label>Height:</label></b>
+            </td>
+            <td>
+              <input type="text" placeholder="Enter Length" value =
+              <?php echo '"'.$row['height'].'"'; ?> name="height" required>
+            </td>
+
+          </tr>
+          <tr>
+            <td style="width: 30%;">
+              <b><label>Acceleration:</label></b>
+            </td>
+            <td>
+              <input type="text" placeholder="Enter Length" value =
+              <?php echo '"'.$row['acceleration'].'"'; ?> name="acc" required>
+            </td>
+
+          </tr>
+          <tr>
+            <td style="width: 30%;">
+              <b><label>Max Speed:</label></b>
+            </td>
+            <td>
+              <input type="text" placeholder="Enter Length" value =
+              <?php echo '"'.$row['maxSpeed'].'"'; ?> name="max" required>
             </td>
 
           </tr>

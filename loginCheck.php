@@ -1,6 +1,6 @@
-<?php
+<?php session_start();
 require_once('connect.php');
-session_start();
+
 if(isset($_POST["user"]) and isset($_POST['password'])){
   $q = 'SELECT customerID, disabled, password, fName FROM customer where username = "'.$_POST['user'].'"';
   $results = $mysqli-> query($q);

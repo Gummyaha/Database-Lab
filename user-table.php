@@ -1,4 +1,11 @@
-<?php session_start(); ?>
+<?php session_start();
+if(isset($_SESSION['role'])){
+  if($_SESSION['role'] == 0){
+    header('Location: user.php');
+  }
+}else{
+  header('Location: login.php');
+}?>
 <html>
 
 <?php
@@ -34,7 +41,9 @@ require_once('menu.php');
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 18px;">Username</th>
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Email</th>
       <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Status</th>
-      <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Edit</th>
+      <?php if($_SESSION['role'] == 2){
+      echo '<th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Edit</th>';
+    }?>
     </tr>
       <?php
 
@@ -54,9 +63,11 @@ require_once('menu.php');
             }else{
               echo "Disabled";
             }
+            if($_SESSION['role'] == 2){
             echo "</td>";
             echo "<td><a href = 'editUser.php?user=".$row['customerID']."'><button class = 'button' style= 'font-size:15; padding:5;'> Edit </button></a></td>";
             echo "</tr>";
+          }
 
           }
       }else{

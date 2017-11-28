@@ -2,8 +2,6 @@
 if(isset($_SESSION['role'])){
   if($_SESSION['role'] == 0){
     header('Location: user.php');
-  }elseif($_SESSION['role'] == 1){
-    header('Location: staff.php');
   }
 }
 ?>
@@ -38,7 +36,10 @@ require_once("connect.php");
         <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Car Name</th>
         <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Location</th>
         <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Status</th>
-        <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Approve</th>
+        <?PHP  if($_SESSION['role'] == 2){
+          echo '<th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd; font-size: 20px;">Approve</th>';
+        }
+          ?>
       </tr>
       <tr>
         <td>
@@ -155,10 +156,13 @@ require_once("connect.php");
         }
 
         echo '</td>';
-        echo "<td>";
-        echo "<a href = 'approve.php?approve=2&id=".$row['bookingID']."'><button class='button' style = 'font-size:15; padding:5;color:white;border-style:none;background-color:#5bb75b;'>Approve </button></a><br>";
-        echo "<a href = 'approve.php?approve=1&id=".$row['bookingID']."'><button class='button' style = 'font-size:15; padding:5;color:white;border-style:none;background-color:#d44944;'>Disapprove </button></a>";
-        echo "</td>";
+        if($_SESSION['role'] == 2){
+          echo "<td>";
+          echo "<a href = 'approve.php?approve=2&id=".$row['bookingID']."'><button class='button' style = 'font-size:15; padding:5;color:white;border-style:none;background-color:#5bb75b;'>Approve </button></a><br>";
+          echo "<a href = 'approve.php?approve=1&id=".$row['bookingID']."'><button class='button' style = 'font-size:15; padding:5;color:white;border-style:none;background-color:#d44944;'>Disapprove </button></a>";
+          echo "</td>";
+        }
+
         echo '</tr>';
       }
       ?>
