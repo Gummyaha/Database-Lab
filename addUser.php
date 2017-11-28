@@ -1,4 +1,11 @@
-<?php session_start(); ?>
+<?php session_start();
+if(isset($_SESSION['role'])){
+  if($_SESSION['role'] == 0){
+    header('Location: user.php');
+  }
+}else{
+  header('Location: login.php');
+}?>
 <html>
 <link rel="stylesheet" href="main.css"/>
 <link rel="stylesheet" href="model.css"/>

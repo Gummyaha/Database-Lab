@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+<?php session_start();?>
 <html>
 
 <link rel="stylesheet" href="main.css"/>

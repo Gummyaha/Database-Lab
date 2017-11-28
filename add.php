@@ -1,6 +1,5 @@
-<?php
+<?php session_start();
     require_once('connect.php');
-    session_start();
   //adding to both, if it didn't come from an add page, redirects to index.
   if(isset($_POST['page'])){
     if($_POST['page'] == 'product'){

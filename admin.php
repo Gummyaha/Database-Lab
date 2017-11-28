@@ -1,4 +1,14 @@
-<?php session_start(); ?>
+<?php session_start();
+if(!isset($_SESSION['role'])){
+  header('Location: login.php');
+}else{
+   if($_SESSION['role'] == 0){
+     header('Location: user.php');
+   }elseif($_SESSION['role'] == 1){
+     header('Location: staff.php');
+   }
+}
+?>
 <!-- insert navigation bar here-->
 <html>
 <link rel="stylesheet" href="main.css"/>

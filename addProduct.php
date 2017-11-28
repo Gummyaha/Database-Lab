@@ -1,4 +1,11 @@
-<?php session_start(); ?>
+<?php session_start();
+if(isset($_SESSION['role'])){
+  if($_SESSION['role'] == 0){
+    header('Location: user.php');
+  }
+}else{
+  header('Location: login.php');
+}?>
 <html>
 <link rel="stylesheet" href="main.css"/>
 <link rel="stylesheet" href="model.css"/>
@@ -14,7 +21,7 @@ require_once("connect.php");
     <header>
   <?php require_once('menu.php'); ?>
       </header>
-      
+
     <center>
       <!-- <label style = "font-size: 30;">ADD PRODUCT<label> -->
       <img style="margin-top: 2%;" src="addproduct.png">
