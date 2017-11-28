@@ -1,5 +1,13 @@
-<html>
-<?php
+<?php session_start();
+if(isset($_SESSION['role'])){
+  if($_SESSION['role'] == 0){
+    header('Location: user.php');
+  }elseif($_SESSION['role'] == 1){
+    header('Location: staff.php');
+  }
+}else{
+  header('Location: login.php');
+}
 require_once("connect.php");
 if(isset($_GET['user'])){
   $ID = $_GET['user'];
@@ -11,10 +19,11 @@ if(isset($_GET['user'])){
 }
 
 ?>
+<html>
 <link rel="stylesheet" href="main.css"/>
 <link rel="stylesheet" href="model.css"/>
   <head>
-    <title> EDIT USER </title>
+    <title> Edit User </title>
   </head>
 
   <body>

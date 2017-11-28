@@ -1,5 +1,4 @@
-<?php
-  session_start();
+<?php  session_start();
   require_once('connect.php');
   if(!isset($_SESSION['ID'])){
     header('Location:login.php');
@@ -21,7 +20,7 @@ require_once('menu.php');
     </header>
 
     <body>
-      <img class="head" style="margin: 5% -5% 5% 0%;" src="User-Head.png"><br>
+      <img class="head" style="margin: 5% 0% 5% 0%; width:100%;" src="User-Head.png"><br>
 <?php
   $q = 'SELECT fName,lName FROM customer where customerID = '.$_SESSION['ID'];
   $results = $mysqli -> query($q);
@@ -118,7 +117,8 @@ require_once('menu.php');
         </tr>
       <?php   $q ='SELECT branch.name as branchName, product.name as prodName, sales.date,brandName
         from sales,branch,product,brands
-        WHERE sales.branchID = branch.branchID AND product.productID = sales.productID and product.manufacturer = brands.brandID';
+        WHERE sales.branchID = branch.branchID AND product.productID = sales.productID
+        and product.manufacturer = brands.brandID and sales.customerID = '.$_SESSION['ID'];
         $result = $mysqli->query($q);
         while($row = $result->fetch_array()){
           echo '<tr>';

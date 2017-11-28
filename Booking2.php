@@ -1,5 +1,4 @@
-<?php
-session_start();
+<?php session_start();
 require_once('connect.php');
 if(isset($_POST['select'])){
   $q = 'SELECT productID, name FROM product where manufacturer = (SELECT brandID from brands where brandID = '.$_POST['select'].')';

@@ -73,11 +73,11 @@ if(isset($_POST['product']) and isset($_POST['image'])){
       <input type="submit" value="Upload Image" name="submit" class="button">
       <br>
       <?php
-      if(isset($upload)){
-        if($upload==1){
+      if(isset($uploaded)){
+        if($uploaded==1){
           echo 'Upload Complete';
         }else{
-          Echo 'Upload Failed';
+          echo 'Upload Failed';
         }
       }
       ?>

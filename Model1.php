@@ -25,7 +25,7 @@ require_once('menu.php');
 <body>
 
 
-  <img class="ChooseBrand" style="float: right; width:85%; margin-bottom: 2%;"; src="Head-Choose-Brand.png">
+  <img class="ChooseBrand" style="float: right; width:100%; margin-bottom: 2%;"; src="Head-Choose-Brand.png">
   <br>
   <br>
   <br>
@@ -39,15 +39,15 @@ require_once('menu.php');
 
     <center>
       <table>
-          <td class = "letter-header" colspan = 7>
+          <td class = "letter-header" colspan = 7 id='let'>
             <center>
             <?php
             $letters = range('A', 'Z');
             foreach($letters as $let){
-              echo '<a class="letters" href = "?filter='.$let.'">'.$let.'</a>';
+              echo '<a class="letters" href = "?filter='.$let.'#let">'.$let.'</a>';
               echo ' ';
             }
-            echo '<a class="letters" href = "?"> | ALL</a>';
+            echo '<a class="letters" href = "?#let"> | ALL</a>';
             ?>
 
           </center>
